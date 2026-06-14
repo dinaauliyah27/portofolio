@@ -225,13 +225,12 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   </div>
 </section>
 
-<!-- Education -->
+<!-- ═══ EDUCATION ═══ -->
 <section id="education" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="max-w-5xl mx-auto px-6">
 
-    <!-- Section Header -->
-    <div class="text-center mb-20 reveal d1">
-      <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">
+    <div class="text-center mb-20">
+      <p class="text-xs font-medium text-accent tracking-widest uppercase mb-3">
         Education
       </p>
 
@@ -242,19 +241,16 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
       <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-16 items-center">
+    <div class="relative">
 
-      <!-- Timeline -->
-      <div class="relative reveal d2">
+      <!-- Timeline Line -->
+      <div class="absolute left-1/2 top-0 h-full w-1 bg-accent/20 -translate-x-1/2 hidden md:block"></div>
 
-        <!-- Vertical Line -->
-        <div class="absolute left-4 top-0 h-full w-1 bg-accent/20"></div>
+      <!-- DIPA University -->
+      <div class="relative mb-20 md:flex items-center">
 
-        <!-- Education Item 1 -->
-        <div class="relative pl-14 mb-12">
-          <div class="absolute left-0 top-2 w-4 h-4 rounded-full bg-accent"></div>
-
-          <span class="font-semibold text-accent">
+        <div class="md:w-1/2 md:pr-12 text-right">
+          <span class="text-accent font-semibold">
             2023 – 2025
           </span>
 
@@ -266,16 +262,29 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
             Bachelor's Degree in Informatics Engineering
           </p>
 
-          <p class="mt-2 text-sm text-zinc-400">
+          <p class="text-sm text-zinc-400 mt-2">
             GPA: 3.85/4.00 (Cum Laude)
+          </p>
+
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3 leading-relaxed">
+            Focused on software development, database systems, data analytics,
+            and UI/UX design through academic projects and research.
           </p>
         </div>
 
-        <!-- Education Item 2 -->
-        <div class="relative pl-14">
-          <div class="absolute left-0 top-2 w-4 h-4 rounded-full bg-accent"></div>
+        <!-- Circle -->
+        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2">
+          <div class="w-5 h-5 rounded-full bg-accent border-4 border-zinc-950"></div>
+        </div>
 
-          <span class="font-semibold text-accent">
+      </div>
+
+      <!-- LP3I -->
+      <div class="relative md:flex items-center">
+
+        <div class="md:w-1/2 md:ml-auto md:pl-12">
+
+          <span class="text-accent font-semibold">
             2020 – 2023
           </span>
 
@@ -287,20 +296,22 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
             Associate Degree in Information Management
           </p>
 
-          <p class="mt-2 text-sm text-zinc-400">
+          <p class="text-sm text-zinc-400 mt-2">
             GPA: 3.89/4.00
           </p>
+
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3 leading-relaxed">
+            Built a strong foundation in programming, database management,
+            and information systems through practical learning and projects.
+          </p>
+
         </div>
 
-      </div>
+        <!-- Circle -->
+        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2">
+          <div class="w-5 h-5 rounded-full bg-accent border-4 border-zinc-950"></div>
+        </div>
 
-      <!-- Image -->
-      <div class="flex justify-center reveal d3">
-        <img
-          src="img/graduation.png"
-          alt="Graduation Photo"
-          class="w-full max-w-md rounded-3xl shadow-xl border border-zinc-200 dark:border-zinc-800 object-cover hover:scale-105 transition duration-500"
-        >
       </div>
 
     </div>
