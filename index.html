@@ -493,12 +493,13 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   </div>
 </section>
 
-<!-- ═══ CERTIFICATES ═══ -->
+<!-- ═════════ CERTIFICATES ═════════ -->
 <section id="certificates" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
 
   <div class="max-w-6xl mx-auto px-6">
 
-    <div class="text-center mb-14 reveal">
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal">
       <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">
         Achievements
       </p>
@@ -512,20 +513,24 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
       <p class="mt-6 text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto">
         Professional certifications, training programs, and achievements that reflect my continuous learning and skill development.
       </p>
-
     </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Certificates Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
       <!-- Certificate 1 -->
       <article class="card-h reveal d1 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
 
-        <img src="img/certificate1.jpg"
-             alt="Certificate"
-             class="w-full h-56 object-cover">
+        <div class="overflow-hidden cursor-pointer">
+          <img
+            src="img/C1.jpg"
+            alt="Certificate 1"
+            class="w-full h-60 object-cover hover:scale-105 transition duration-500"
+            onclick="openImage(this.src)">
+        </div>
 
         <div class="p-6">
-
           <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">
             UI/UX Design Certification
           </h3>
@@ -533,7 +538,6 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
           <p class="text-sm text-zinc-500 dark:text-zinc-400">
             BNSP • 2025
           </p>
-
         </div>
 
       </article>
@@ -542,12 +546,15 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
       <!-- Certificate 2 -->
       <article class="card-h reveal d2 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
 
-        <img src="img/certificate2.jpg"
-             alt="Certificate"
-             class="w-full h-56 object-cover">
+        <div class="overflow-hidden cursor-pointer">
+          <img
+            src="img/C2.jpg"
+            alt="Certificate 2"
+            class="w-full h-60 object-cover hover:scale-105 transition duration-500"
+            onclick="openImage(this.src)">
+        </div>
 
         <div class="p-6">
-
           <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">
             Data Analytics Training
           </h3>
@@ -555,7 +562,6 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
           <p class="text-sm text-zinc-500 dark:text-zinc-400">
             Kalla Institute • 2024
           </p>
-
         </div>
 
       </article>
@@ -564,12 +570,15 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
       <!-- Certificate 3 -->
       <article class="card-h reveal d3 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
 
-        <img src="img/certificate3.jpg"
-             alt="Certificate"
-             class="w-full h-56 object-cover">
+        <div class="overflow-hidden cursor-pointer">
+          <img
+            src="img/certificate3.jpg"
+            alt="Certificate 3"
+            class="w-full h-60 object-cover hover:scale-105 transition duration-500"
+            onclick="openImage(this.src)">
+        </div>
 
         <div class="p-6">
-
           <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">
             Web Development Training
           </h3>
@@ -577,7 +586,6 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
           <p class="text-sm text-zinc-500 dark:text-zinc-400">
             Dicoding • 2024
           </p>
-
         </div>
 
       </article>
@@ -810,6 +818,37 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
     </p>
   </div>
 </footer>
+<!-- IMAGE MODAL -->
+<div
+  id="imageModal"
+  class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-6">
+
+  <button
+    onclick="closeImage()"
+    class="absolute top-6 right-8 text-white text-5xl hover:text-accent transition">
+    &times;
+  </button>
+
+  <img
+    id="modalImage"
+    class="max-w-[90%] max-h-[90vh] rounded-3xl shadow-2xl">
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script>
+  function openImage(src) {
+    document.getElementById("modalImage").src = src;
+    document.getElementById("imageModal").classList.remove("hidden");
+    document.getElementById("imageModal").classList.add("flex");
+  }
+
+  function closeImage() {
+    document.getElementById("imageModal").classList.remove("flex");
+    document.getElementById("imageModal").classList.add("hidden");
+  }
+</script>
 
 <script>
 function app() {
