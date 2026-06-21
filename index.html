@@ -316,9 +316,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
           class="w-72 rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 object-cover hover:scale-105 transition duration-500"
         />
       </div>
-
     </div>
-
   </div>
 </section>
 
@@ -982,7 +980,7 @@ function app() {
     updateSection() {
       const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
       if (atBottom) { this.s = 'contact'; return; }
-      const ids = ['hero','skills','projects','about','experience','academic','contact'];
+      const ids = ['hero','skills','academic','projects','about','experience','contact'];
       for (const id of ids) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
