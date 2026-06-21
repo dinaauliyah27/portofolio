@@ -90,10 +90,10 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 
     <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
       <li><a href="#skills" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='skills'?'on !text-zinc-900 dark:!text-white':''">Skills</a></li>
+      <li><a href="#academic"    class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='academic'?'on !text-zinc-900 dark:!text-white':''">Academic</a></li>
+      <li><a href="#experience" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='experience'?'on !text-zinc-900 dark:!text-white':''">Experience</a></li>
       <li><a href="#projects"     class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='projects'?'on !text-zinc-900 dark:!text-white':''">Projects</a></li>
       <li><a href="#about"   class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
-      <li><a href="#experience" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='experience'?'on !text-zinc-900 dark:!text-white':''">Experience</a></li>
-      <li><a href="#academic"    class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='academic'?'on !text-zinc-900 dark:!text-white':''">Academic</a></li>
       <li><a href="#contact" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li>
     </ul>
 
@@ -122,10 +122,10 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
     class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
     <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
       <li><a href="#skills" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Skills</a></li>
+      <li><a href="#academic"    @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Academic</a></li>
+      <li><a href="#experience" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Experience</a></li>
       <li><a href="#projects" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projects</a></li>
       <li><a href="#about"   @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
-      <li><a href="#experience" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Experience</a></li>
-      <li><a href="#academic"    @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Academic</a></li>
       <li><a href="#contact" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
       <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
         <a href="#contact" @click="mm=false" class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Contact me →</a>
@@ -980,7 +980,7 @@ function app() {
     updateSection() {
       const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
       if (atBottom) { this.s = 'contact'; return; }
-      const ids = ['hero','skills','academic','projects','about','experience','contact'];
+      const ids = ['hero','skills','academic','experience','projects','about','contact'];
       for (const id of ids) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
