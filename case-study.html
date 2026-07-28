@@ -14,12 +14,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Novu — SaaS Dashboard redesign case study by Eliott. How a full UX overhaul reduced cognitive load by 40% and improved trial-to-paid conversion."/>
-  <meta name="author" content="Eliott"/>
+  <meta name="description" content="ICT-NEXA Application — UI/UX Design case study by Dina Auliyah. Applying Design Thinking to build a user-centered IT management platform for Kalla Institute."/>
+  <meta name="author" content="Dina Auliyah"/>
   <link rel="icon" type="image/png" href="img/DA.png">
-  <meta property="og:title" content="Novu — SaaS Dashboard · Case Study by Eliott"/>
+  <meta property="og:title" content="ICT-NEXA Application — UI/UX Design · Case Study by Dina Auliyah"/>
   <meta property="og:type" content="article"/>
-  <title>Novu — SaaS Dashboard · Case Study — Eliott</title>
+  <title>ICT-NEXA Application — UI/UX Design · Case Study — Dina Auliyah</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -242,251 +242,161 @@
 
   <!-- ═══ HERO IMAGE ═══ -->
   <section class="pb-20">
-
     <div class="max-w-6xl mx-auto px-6">
-
-      <div class="overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-2xl">
-
+      <div class="overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-2xl cursor-pointer" onclick="openImage('img/nexa/Dashboard Nexa.png')">
         <img
-          src="img/8.png"
-          alt="ICT-NEXA Application"
-          class="w-full object-cover">
-
+          src="img/nexa/Dashboard Nexa.png"
+          alt="ICT-NEXA Application Main Dashboard"
+          class="w-full object-cover hover:scale-[1.01] transition duration-500">
       </div>
-
+      <p class="img-caption mt-3">Click image to view full resolution — Main Dashboard Screen for ICT-NEXA</p>
     </div>
-
   </section>
 
-      <!-- ═══ RESULTS BANNER ═══ -->
-      <section class="pb-24">
-      <div class="max-w-6xl mx-auto px-6">
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-          <div class="card-h rounded-3xl p-8 bg-white dark:bg-zinc-900">
-            <p class="font-display text-4xl font-bold text-accent">5</p>
-
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3">
-              Design Thinking Stages
-            </p>
-          </div>
-
-          <div class="card-h rounded-3xl p-8 bg-white dark:bg-zinc-900">
-            <p class="font-display text-4xl font-bold text-zinc-900 dark:text-white">
-              10+
-            </p>
-
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3">
-              UI Screens
-            </p>
-          </div>
-
-          <div class="card-h rounded-3xl p-8 bg-white dark:bg-zinc-900">
-            <p class="font-display text-4xl font-bold text-zinc-900 dark:text-white">
-              Figma
-            </p>
-
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3">
-              Design Tool
-            </p>
-          </div>
-
-          <div class="card-h rounded-3xl p-8 bg-white dark:bg-zinc-900">
-            <p class="font-display text-4xl font-bold text-zinc-900 dark:text-white">
-              UI/UX
-            </p>
-
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3">
-              Research & Prototype
-            </p>
-          </div>
-
+  <!-- ═══ RESULTS BANNER ═══ -->
+  <section class="pb-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="card-h rounded-3xl p-8 bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800">
+          <p class="font-display text-4xl font-bold text-accent">5</p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3">Design Thinking Stages</p>
         </div>
-
-      </div>
-    </section>
-
-      <!-- ═══ ARTICLE BODY ═══ -->
-      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
-
-        <h2>The brief</h2>
-        <p>Novu is a B2B notification infrastructure platform — it lets developers route, manage, and monitor notifications across email, SMS, push, and in-app channels. The product was technically solid, but the dashboard had grown organically over two years without a coherent design strategy. By early 2025, the team were seeing high churn in the 14-day trial window and receiving consistent feedback that the platform was "powerful but overwhelming."</p>
-        <p>My mandate was simple: fix the first-hour experience without rebuilding the product from scratch. The budget was fixed and the engineering team had six weeks to ship.</p>
-
-        <blockquote>
-          <p>"We're losing users in the first 20 minutes. They sign up, see the dashboard, and just bounce. The product does exactly what they need — they just can't find it."</p>
-        </blockquote>
-
-        <h2>Discovery & research</h2>
-        <h3>User interviews</h3>
-        <p>I ran 9 user interviews with a mix of current paying customers and recently churned trial users. The sessions were 45-minute moderated usability tests combined with post-task interviews. Key findings:</p>
-        <ul>
-          <li>7 of 9 users couldn't locate the "Workflows" section without help during their first session</li>
-          <li>The notification log and the analytics panel were confused for one another by 5 users</li>
-          <li>The sidebar had 14 top-level navigation items — users reported feeling "unsure where to start"</li>
-          <li>Trial users specifically wanted a "get your first notification live" path, not a feature overview</li>
-        </ul>
-
-        <h3>Heuristic audit</h3>
-        <p>I ran a full Nielsen heuristic evaluation of the existing interface and identified 23 violations across 6 categories. The most critical were around visibility of system status, recognition over recall, and error prevention in the workflow builder.</p>
-
-      </div>
-
-      <!-- Full-width image -->
-      <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=1200&q=80" alt="Existing dashboard audit — heuristic violations mapped" loading="lazy"/>
+        <div class="card-h rounded-3xl p-8 bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800">
+          <p class="font-display text-4xl font-bold text-zinc-900 dark:text-white">6 Main</p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3">Key User Interfaces</p>
         </div>
-        <p class="img-caption">Existing dashboard with heuristic violations annotated during the audit phase.</p>
-      </div>
-
-      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
-
-        <h2>Design strategy</h2>
-        <p>Based on the research, I built the redesign around three principles:</p>
-
-      </div>
-
-      <!-- 3-column principles -->
-      <div class="max-w-5xl mx-auto px-6 mb-12">
-        <div class="reveal grid md:grid-cols-3 gap-5">
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-blue-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Progressive disclosure</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Show only what's needed for the current task. Advanced features revealed on demand, not upfront.</p>
-          </div>
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-blue-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-            </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Opinionated navigation</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Reduce the sidebar to 6 core items. Group secondary actions in context panels rather than global nav.</p>
-          </div>
-          <div class="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="w-10 h-10 bg-blue-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-            </div>
-            <h3 class="font-display font-bold text-zinc-900 dark:text-white mb-2" style="font-size:1rem;margin:0 0 .5rem;color:inherit;">Goal-first onboarding</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed" style="margin:0;color:inherit;">Replace the feature tour with a 3-step "send your first notification" flow that delivers an aha-moment in under 5 minutes.</p>
-          </div>
+        <div class="card-h rounded-3xl p-8 bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800">
+          <p class="font-display text-4xl font-bold text-zinc-900 dark:text-white">Figma</p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3">Design & Prototyping</p>
+        </div>
+        <div class="card-h rounded-3xl p-8 bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800">
+          <p class="font-display text-4xl font-bold text-zinc-900 dark:text-white">3.85</p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3">Bachelor Thesis Focus</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+  <!-- ═══ ARTICLE BODY ═══ -->
+  <div class="max-w-3xl mx-auto px-6 pb-4 prose-cs">
+    <h2>The Brief & Project Overview</h2>
+    <p>ICT-NEXA is a comprehensive IT service & application management platform developed for Kalla Institute of Technology and Business. As part of my undergraduate thesis at Universitas DIPA Makassar, I designed the user interface and user experience (UI/UX) using a human-centered <strong>Design Thinking framework</strong> (Empathize, Define, Ideate, Prototype, and Test).</p>
+    <p>The goal was to streamline academic and administrative IT requests, application registration, and issue resolution into a single, cohesive, modern interface accessible to students, faculty, and administrators.</p>
 
-        <h2>Process</h2>
-        <h3>Week 1–2 · Information architecture</h3>
-        <p>I ran a card sorting exercise with 12 participants to rebuild the navigation taxonomy from scratch. The 14-item sidebar collapsed to 6 primary destinations. I then produced low-fidelity wireframes in Figma for the 8 most-visited screens, running rapid async reviews with the product team using Loom walkthroughs.</p>
+    <blockquote>
+      <p>"Developing an intuitive digital ecosystem requires starting with empathy — understanding how students and academic staff interact with daily IT services."</p>
+    </blockquote>
 
+    <h2>Design Thinking Methodology</h2>
+    <h3>1. Empathize & Define</h3>
+    <p>Conducted user interviews, observational studies, and survey questionnaires with academic users at Kalla Institute to identify core pain points in existing service request workflows.</p>
+
+    <h3>2. Ideation & Wireframing</h3>
+    <p>Structured the user architecture around 6 essential application views: authentication, dashboard statistics, application listing, application registration, answer/ticket response system, and user profile management.</p>
+  </div>
+
+  <!-- ═══ FULL UI SCREEN SHOWCASE GALLERY ═══ -->
+  <section class="py-12 my-8 bg-zinc-50 dark:bg-zinc-900/50 rounded-3xl border border-zinc-100 dark:border-zinc-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-xs font-medium text-accent uppercase tracking-widest mb-2">High-Fidelity Wireframes & UI Designs</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white">ICT-NEXA Screen Gallery</h2>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3">Click on any screen to expand in high resolution</p>
       </div>
 
-      <!-- Process steps -->
-      <div class="max-w-4xl mx-auto px-6 mb-12">
-        <div class="reveal space-y-4">
-          <!-- Step -->
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">1</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Card sorting + IA rebuild</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Remote card sort with 12 participants via Optimal Workshop. 14 nav items → 6 clear destinations with zero ambiguous groupings.</p>
-            </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Screen 1: Login -->
+        <article class="card-h bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md">
+          <div class="overflow-hidden cursor-pointer h-56 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center" onclick="openImage('img/nexa/Login Nexa.png')">
+            <img src="img/nexa/Login Nexa.png" alt="Login Nexa Screen" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
           </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">2</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Lo-fi wireframes & async review</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">8 key screens sketched in Figma wireframe mode. Async review via Loom with the product team — 3 iteration rounds over 4 days.</p>
-            </div>
+          <div class="p-6">
+            <span class="text-xs font-medium text-accent bg-blue-50 dark:bg-zinc-800 border border-blue-100 dark:border-zinc-700 px-2.5 py-1 rounded-full">01. Authentication</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mt-3 mb-2">Login Screen</h3>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">Clean and secure login portal featuring modern input fields, role choice, and branding for Kalla Institute.</p>
           </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">3</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Hi-fi design & component library</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Full Figma component library built on Auto Layout. 40+ components covering all states (empty, loading, error). Dark mode tokens included.</p>
-            </div>
+        </article>
+
+        <!-- Screen 2: Dashboard -->
+        <article class="card-h bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md">
+          <div class="overflow-hidden cursor-pointer h-56 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center" onclick="openImage('img/nexa/Dashboard Nexa.png')">
+            <img src="img/nexa/Dashboard Nexa.png" alt="Dashboard Nexa Screen" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
           </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">4</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Usability testing & iteration</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">5 moderated sessions on the hi-fi prototype. 2 significant UX issues surfaced and resolved before handoff. SUS score improved from 54 → 82.</p>
-            </div>
+          <div class="p-6">
+            <span class="text-xs font-medium text-accent bg-blue-50 dark:bg-zinc-800 border border-blue-100 dark:border-zinc-700 px-2.5 py-1 rounded-full">02. Overview</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mt-3 mb-2">Main Dashboard</h3>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">Central hub providing quick access to active tickets, system updates, service metrics, and pending actions.</p>
           </div>
-          <div class="flex gap-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-100 dark:border-zinc-800">
-            <div class="step-badge shrink-0 mt-0.5">5</div>
-            <div>
-              <p class="font-display font-bold text-zinc-900 dark:text-white mb-1">Handoff & front-end support</p>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Zeroheight design doc + Tailwind CSS implementation of the new design tokens. Present during sprint to support the engineering team on edge cases.</p>
-            </div>
+        </article>
+
+        <!-- Screen 3: List App -->
+        <article class="card-h bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md">
+          <div class="overflow-hidden cursor-pointer h-56 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center" onclick="openImage('img/nexa/List App Nexa.png')">
+            <img src="img/nexa/List App Nexa.png" alt="List App Nexa Screen" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
           </div>
-        </div>
-      </div>
-
-      <!-- Second full-width image -->
-      <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="High-fidelity Figma screens — new dashboard layout" loading="lazy"/>
-        </div>
-        <p class="img-caption">Final hi-fi screens showing the redesigned sidebar, dashboard home, and notification workflow builder.</p>
-      </div>
-
-      <!-- Before / After split -->
-      <div class="max-w-5xl mx-auto px-6 mb-12">
-        <div class="reveal grid md:grid-cols-2 gap-4">
-          <div>
-            <div class="photo-frame w-full h-52 rounded-2xl">
-              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=700&q=80" alt="Before — original dashboard" loading="lazy"/>
-            </div>
-            <p class="img-caption mt-2">Before — 14-item sidebar, no clear entry point</p>
+          <div class="p-6">
+            <span class="text-xs font-medium text-accent bg-blue-50 dark:bg-zinc-800 border border-blue-100 dark:border-zinc-700 px-2.5 py-1 rounded-full">03. Catalog</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mt-3 mb-2">Application Directory</h3>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">Structured listing of registered campus applications with status badges, category filters, and search capabilities.</p>
           </div>
-          <div>
-            <div class="photo-frame w-full h-52 rounded-2xl">
-              <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80" alt="After — redesigned dashboard" loading="lazy"/>
-            </div>
-            <p class="img-caption mt-2">After — 6-item sidebar, goal-first onboarding checklist</p>
+        </article>
+
+        <!-- Screen 4: Add App -->
+        <article class="card-h bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md">
+          <div class="overflow-hidden cursor-pointer h-56 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center" onclick="openImage('img/nexa/Add App Nexa.png')">
+            <img src="img/nexa/Add App Nexa.png" alt="Add App Nexa Screen" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
           </div>
-        </div>
-      </div>
+          <div class="p-6">
+            <span class="text-xs font-medium text-accent bg-blue-50 dark:bg-zinc-800 border border-blue-100 dark:border-zinc-700 px-2.5 py-1 rounded-full">04. Registration</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mt-3 mb-2">Add New Application</h3>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">Intuitive form interface allowing staff and developers to submit new digital applications for ICT onboarding.</p>
+          </div>
+        </article>
 
-      <div class="max-w-3xl mx-auto px-6 pb-16 prose-cs">
+        <!-- Screen 5: Answer -->
+        <article class="card-h bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md">
+          <div class="overflow-hidden cursor-pointer h-56 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center" onclick="openImage('img/nexa/Answer Nexa.png')">
+            <img src="img/nexa/Answer Nexa.png" alt="Answer Nexa Screen" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-medium text-accent bg-blue-50 dark:bg-zinc-800 border border-blue-100 dark:border-zinc-700 px-2.5 py-1 rounded-full">05. Communication</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mt-3 mb-2">Ticket & Answer Portal</h3>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">Interactive response portal for ICT support personnel to address user inquiries and provide documented solutions.</p>
+          </div>
+        </article>
 
-        <h2>Key design decisions</h2>
-        <h3>Collapsing the sidebar</h3>
-        <p>The original sidebar mixed primary destinations with contextual actions and account settings indiscriminately. I applied a strict three-tier hierarchy: primary navigation (6 items, always visible), contextual actions (appear in a right panel when relevant), and account/settings (collapsed under an avatar menu). This alone reduced the cognitive entry cost significantly — users knew where they were and where they could go.</p>
-
-        <h3>The onboarding checklist</h3>
-        <p>Rather than a product tour, I designed a persistent but dismissible checklist embedded in the dashboard home. Three steps: connect a channel, create a workflow, send a test notification. Each step launches an inline mini-wizard that completes within the dashboard without breaking context. In the first month post-launch, 68% of trial users completed all three steps vs 21% previously.</p>
-
-        <h3>Empty states as teachers</h3>
-        <p>Every empty state in the old design was a blank panel. In the redesign, each empty state includes a one-sentence explanation of what the section does, a primary CTA, and a secondary link to documentation. This reduced support tickets specifically about feature discovery by 35%.</p>
-
-        <h2>Results</h2>
-        <p>The redesign shipped in week 6, exactly on schedule. Metrics were tracked over the following 6 weeks post-launch compared to the same prior period.</p>
-        <ul>
-          <li><strong>SUS (System Usability Scale) score:</strong> 54 → 82 (+28 points)</li>
-          <li><strong>Trial-to-paid conversion rate:</strong> +27%</li>
-          <li><strong>Onboarding completion (3-step flow):</strong> 21% → 68%</li>
-          <li><strong>Support tickets (onboarding-related):</strong> −35%</li>
-          <li><strong>Average time to first workflow created:</strong> 18 min → 4 min</li>
-          <li><strong>Post-launch NPS:</strong> 4.8/5</li>
-        </ul>
-
-        <blockquote>
-          <p>"Eliott completely changed how we think about our onboarding. The checklist alone added 6 figures to our ARR in the first quarter. Exceptionally thorough process and a pleasure to work with."</p>
-        </blockquote>
-
-        <h2>Reflections</h2>
-        <p>The biggest lesson from this project: most SaaS UX problems aren't about aesthetics, they're about information architecture. The product was capable — users just couldn't find the value fast enough. A focused IA overhaul delivered more measurable ROI than a visual rebrand ever could have.</p>
-        <p>If I were to do it again, I'd push harder for a longer discovery phase. Six weeks is tight for a full dashboard redesign, and we had to make some navigation decisions based on incomplete card-sort data. The results held up, but another round of testing before hi-fi would have given me more confidence on a few borderline calls.</p>
-
-        <hr/>
-        <p><em>Interested in a similar engagement? <a href="index.html#contact">Get in touch</a> — I'm available for new projects from Q2 2025.</em></p>
+        <!-- Screen 6: Profile -->
+        <article class="card-h bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md">
+          <div class="overflow-hidden cursor-pointer h-56 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center" onclick="openImage('img/nexa/Profile Nexa.png')">
+            <img src="img/nexa/Profile Nexa.png" alt="Profile Nexa Screen" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-medium text-accent bg-blue-50 dark:bg-zinc-800 border border-blue-100 dark:border-zinc-700 px-2.5 py-1 rounded-full">06. Account Management</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mt-3 mb-2">User Profile & Settings</h3>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">User management dashboard for updating account preferences, security credentials, and department settings.</p>
+          </div>
+        </article>
 
       </div>
-    </article>
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-6 pb-16 prose-cs">
+    <h2>Key Design Principles</h2>
+    <h3>Consistent Visual Hierarchy</h3>
+    <p>Established a standardized UI component system built in Figma, ensuring typography, spacing, active states, and color palettes stay consistent across all 6 key screens.</p>
+
+    <h3>Streamlined Navigation</h3>
+    <p>Reorganized the service workflow to reduce user clicks when submitting application requests or tracking support responses, resulting in a cleaner user journey.</p>
+
+    <h2>Conclusion & Impact</h2>
+    <p>This design case study formed the foundation of my S1 Informatics Engineering thesis at Universitas DIPA Makassar (Graduated <em>Cum Laude</em> with 3.85 GPA). The resulting UI design demonstrated how structured UX research and Design Thinking deliver a seamless digital service environment for academic institutions.</p>
+
+    <hr/>
+    <p><em>Interested in UI/UX design collaboration? <a href="index.html#contact">Get in touch with me</a>.</em></p>
+  </div>
+  </article>
 
     <!-- ═══ MORE PROJECTS ═══ -->
     <section class="bg-zinc-50 dark:bg-zinc-900/50 py-16">
@@ -569,15 +479,29 @@
 
   </main>
 
-  <footer class="border-t border-zinc-100 dark:border-zinc-900">
-    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-zinc-400">© <span id="yr"></span> Eliott. All rights reserved. <br> Developed by <a href="https://lbegey78.gumroad.com/" target="_blank" class="font-bold">Laurent Begey</a> • Distributed by <a href="https://themewagon.com/" target="_blank" class="font-bold">ThemeWagon</a></p>
-      <p class="text-xs text-zinc-500">Built with <a href="https://tailwindcss.com" class="hover:text-zinc-900 dark:hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">Tailwind CSS</a> &amp; <a href="https://alpinejs.dev" class="hover:text-zinc-900 dark:hover:text-white transition-colors" rel="noopener noreferrer" target="_blank">Alpine.js</a></p>
-    </div>
   </footer>
 
+  <!-- IMAGE MODAL -->
+  <div id="imageModal" class="fixed inset-0 bg-black/85 hidden items-center justify-center z-50 p-6">
+    <button onclick="closeImage()" class="absolute top-6 right-8 text-white text-5xl hover:text-accent transition">&times;</button>
+    <img id="modalImage" class="max-w-[92%] max-h-[90vh] rounded-2xl shadow-2xl object-contain">
+  </div>
+
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    function openImage(src) {
+      document.getElementById("modalImage").src = src;
+      document.getElementById("imageModal").classList.remove("hidden");
+      document.getElementById("imageModal").classList.add("flex");
+    }
+
+    function closeImage() {
+      document.getElementById("imageModal").classList.remove("flex");
+      document.getElementById("imageModal").classList.add("hidden");
+    }
+
+    if (document.getElementById('yr')) {
+      document.getElementById('yr').textContent = new Date().getFullYear();
+    }
 
     // Reveal on scroll
     const obs = new IntersectionObserver(entries => {
