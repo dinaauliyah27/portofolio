@@ -1,701 +1,1031 @@
 <!DOCTYPE html>
 <html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio - Dina Auliyah">
-<meta name="keywords" content="Dina Auliyah, Frontend Developer, Web Developer, UI/UX Enthusiast, Portfolio, HTML, CSS, JavaScript, Tailwind CSS, Alpine.js, GitHub">
-<meta name="author" content="Dina Auliyah">
-<link rel="icon" type="image/png" href="img/DA.png">
-<meta property="og:title" content="Dina Auliyah — Portfolio">
-<meta property="og:description" content="I design and build digital products that people love to use.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://dinaauliyah27.github.io/portofolio/">
-<title>Dina Auliyah - Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio - Dina Auliyah">
+  <meta name="keywords"
+    content="Dina Auliyah, Frontend Developer, Web Developer, UI/UX Enthusiast, Portfolio, HTML, CSS, JavaScript, Tailwind CSS, Alpine.js, GitHub">
+  <meta name="author" content="Dina Auliyah">
+  <link rel="icon" type="image/png" href="img/DA.png">
+  <meta property="og:title" content="Dina Auliyah — Portfolio">
+  <meta property="og:description" content="I design and build digital products that people love to use.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dinaauliyah27.github.io/portofolio/">
+  <title>Dina Auliyah - Portfolio</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+    rel="stylesheet">
 
-<script>
-tailwind.config = {
-  darkMode: 'class',
-  theme: {
-    extend: {
-      fontFamily: { display: ['PT Sans','sans-serif'], body: ['DM Sans','sans-serif'] },
-      colors: { accent: '#3B82F6', 'accent-light': '#60A5FA' }
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { display: ['PT Sans', 'sans-serif'], body: ['DM Sans', 'sans-serif'] },
+          colors: { accent: '#3B82F6', 'accent-light': '#60A5FA' }
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 
-<style>
-*,*::before,*::after{box-sizing:border-box}
-html,body{font-family:'DM Sans',sans-serif}
-h1,h2,h3,h4,h5,h6{font-family:'PT Sans',sans-serif}
-body{transition:background-color .3s,color .3s}
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
 
-/* noise overlay */
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;
-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
+    html,
+    body {
+      font-family: 'DM Sans', sans-serif
+    }
 
-/* scrollbar */
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:#3B82F6;border-radius:99px}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'PT Sans', sans-serif
+    }
 
-/* reveal on scroll */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
-.reveal.in{opacity:1;transform:none}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+    body {
+      transition: background-color .3s, color .3s
+    }
 
-/* nav underline animation */
-.nl{position:relative}
-.nl::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:currentColor;transition:width .22s cubic-bezier(.4,0,.2,1)}
-.nl:hover::after,.nl.on::after{width:100%}
-.nl.on{font-weight:500}
+    /* noise overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .35;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")
+    }
 
-/* shimmer button */
-.shimmer{position:relative;overflow:hidden}
-.shimmer::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,.18);transform:skewX(-20deg);transition:left .4s cubic-bezier(.4,0,.2,1)}
-.shimmer:hover::after{left:160%}
+    /* scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px
+    }
 
-/* photo frames */
-.pf{overflow:hidden;background:#d4d4d8}
-.pf img{width:100%;height:100%;object-fit:cover;display:block}
+    ::-webkit-scrollbar-track {
+      background: transparent
+    }
 
-/* card hover */
-.card-h{transition:transform .28s cubic-bezier(.4,0,.2,1),border-color .18s}
-.card-h:hover{transform:translateY(-4px)}
+    ::-webkit-scrollbar-thumb {
+      background: #3B82F6;
+      border-radius: 99px
+    }
 
-/* skill tag */
-.stag{transition:border-color .18s}
+    /* reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .6s cubic-bezier(.4, 0, .2, 1), transform .6s cubic-bezier(.4, 0, .2, 1)
+    }
 
-[x-cloak]{display:none!important}
-</style>
+    .reveal.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .d1 {
+      transition-delay: .08s
+    }
+
+    .d2 {
+      transition-delay: .16s
+    }
+
+    .d3 {
+      transition-delay: .24s
+    }
+
+    .d4 {
+      transition-delay: .32s
+    }
+
+    /* nav underline animation */
+    .nl {
+      position: relative
+    }
+
+    .nl::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: currentColor;
+      transition: width .22s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .nl:hover::after,
+    .nl.on::after {
+      width: 100%
+    }
+
+    .nl.on {
+      font-weight: 500
+    }
+
+    /* shimmer button */
+    .shimmer {
+      position: relative;
+      overflow: hidden
+    }
+
+    .shimmer::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: rgba(255, 255, 255, .18);
+      transform: skewX(-20deg);
+      transition: left .4s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .shimmer:hover::after {
+      left: 160%
+    }
+
+    /* photo frames */
+    .pf {
+      overflow: hidden;
+      background: #d4d4d8
+    }
+
+    .pf img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    /* card hover */
+    .card-h {
+      transition: transform .28s cubic-bezier(.4, 0, .2, 1), border-color .18s
+    }
+
+    .card-h:hover {
+      transform: translateY(-4px)
+    }
+
+    /* skill tag */
+    .stag {
+      transition: border-color .18s
+    }
+
+    [x-cloak] {
+      display: none !important
+    }
+  </style>
 </head>
 
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
 
-<!-- ═══ NAV ═══ -->
-<header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
-  :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
-  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+  <!-- ═══ NAV ═══ -->
+  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+    :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
 
-    <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
-      <span class="text-zinc-900 dark:text-white">Dina</span><span class="text-accent"> Auliyah</span>
-    </a>
-
-    <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
-      <li><a href="#skills" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='skills'?'on !text-zinc-900 dark:!text-white':''">Skills</a></li>
-      <li><a href="#academic"    class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='academic'?'on !text-zinc-900 dark:!text-white':''">Academic</a></li>
-      <li><a href="#experience" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='experience'?'on !text-zinc-900 dark:!text-white':''">Experience</a></li>
-      <li><a href="#projects"     class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='projects'?'on !text-zinc-900 dark:!text-white':''">Projects</a></li>
-      <li><a href="#about"   class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
-      <li><a href="#contact" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li>
-    </ul>
-
-    <div class="flex items-center gap-3">
-      <!-- dark toggle -->
-      <button @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark?'Light mode':'Dark mode'">
-        <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-        <svg x-show="dark"  class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
-      </button>
-      <!-- contact me -->
-      <a href="#contact" class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-        Contact me <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
+        <span class="text-zinc-900 dark:text-white">Dina</span><span class="text-accent"> Auliyah</span>
       </a>
-      <!-- hamburger -->
-      <button @click="mm=!mm" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" :aria-expanded="mm" aria-label="Toggle menu">
-        <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg x-show="mm"  class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
+        <li><a href="#skills"
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            :class="s==='skills'?'on !text-zinc-900 dark:!text-white':''">Skills</a></li>
+        <li><a href="#academic"
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            :class="s==='academic'?'on !text-zinc-900 dark:!text-white':''">Academic</a></li>
+        <li><a href="#experience"
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            :class="s==='experience'?'on !text-zinc-900 dark:!text-white':''">Experience</a></li>
+        <li><a href="#projects"
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            :class="s==='projects'?'on !text-zinc-900 dark:!text-white':''">Projects</a></li>
+        <li><a href="#about"
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
+        <li><a href="#contact"
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- dark toggle -->
+        <button @click="dark=!dark"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+          :aria-label="dark?'Light mode':'Dark mode'">
+          <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+          <svg x-show="dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+        </button>
+        <!-- contact me -->
+        <a href="#contact"
+          class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
+          Contact me <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <!-- hamburger -->
+        <button @click="mm=!mm"
+          class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800"
+          :aria-expanded="mm" aria-label="Toggle menu">
+          <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg x-show="mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- mobile menu -->
+    <div x-show="mm" x-cloak x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+      <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
+        <li><a href="#skills" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Skills</a></li>
+        <li><a href="#projects" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projects</a></li>
+        <li><a href="#about" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
+        <li><a href="#experience" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Experience</a></li>
+
+        <li><a href="#contact" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
+        <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
+          <a href="#contact" @click="mm=false"
+            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Contact me
+            →</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </header>
 
-  <!-- mobile menu -->
-  <div x-show="mm" x-cloak
-    x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
-    x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2"
-    class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
-    <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
-      <li><a href="#skills" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Skills</a></li>
-      <li><a href="#projects" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projects</a></li>
-      <li><a href="#about"   @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
-      <li><a href="#experience" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Experience</a></li>
+  <main>
 
-      <li><a href="#contact" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
-      <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
-        <a href="#contact" @click="mm=false" class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Contact me →</a>
-      </li>
-    </ul>
-  </div>
-</header>
+    <!-- ═══ HERO ═══ -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+      <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"
+        aria-hidden="true"></div>
+      <div
+        class="absolute bottom-1/4 left-0 w-64 h-64 bg-zinc-200/50 dark:bg-zinc-800/30 rounded-full blur-3xl pointer-events-none"
+        aria-hidden="true"></div>
 
-<main>
+      <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
 
-<!-- ═══ HERO ═══ -->
-<section id="hero" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
-  <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-  <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-zinc-200/50 dark:bg-zinc-800/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-
-  <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-
-      <div>
-        <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">Available for work</p>
-        <h1 class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
-          Hi, I'm <span class="text-accent">Dina Auliyah</span>
-        </h1>
-        <p class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
-          An Informatics Engineering Graduate with a passion for <strong class="font-medium text-zinc-700 dark:text-zinc-300">UI/UX Designer &amp; Web Development</strong>, focused on creating intuitive and meaningful digital solutions.
-        </p>
-        <div class="reveal d3 flex flex-wrap gap-4">
-          <a href="#projects" class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
-            View my Projects
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </a>
-          <a href="#contact" class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Get in touch</a>
-        </div>
-        <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
           <div>
-            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">UI/UX</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Design</p></div>
-          <div>
-            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">Data</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Analytics </p></div>
-          <div>
-            <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">Web</p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Developer</p></div>
-        </div>
-      </div>
-
-      <div class="reveal d2 flex justify-center md:justify-end">
-        <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
-          <div class="pf w-full h-full rounded-3xl">
-            <img src="img/2.JPG" alt="Dina" loading="eager">
+            <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">Available for work</p>
+            <h1
+              class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
+              Hi, I'm <span class="text-accent">Dina Auliyah</span>
+            </h1>
+            <p
+              class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
+              An Informatics Engineering Graduate with a passion for <strong
+                class="font-medium text-zinc-700 dark:text-zinc-300">UI/UX Designer &amp; Web Development</strong>,
+              focused on creating intuitive and meaningful digital solutions.
+            </p>
+            <div class="reveal d3 flex flex-wrap gap-4">
+              <a href="#projects"
+                class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
+                View my Projects
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <a href="#contact"
+                class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Get
+                in touch</a>
+            </div>
+            <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
+              <div>
+                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">UI/UX</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Design</p>
+              </div>
+              <div>
+                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">Data</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Analytics </p>
+              </div>
+              <div>
+                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">Web</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Developer</p>
+              </div>
+            </div>
           </div>
-          <a href="CV_DINAAULIYAH.pdf" download
-            class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg hover:opacity-90 transition">
-            View Resume </a>
+
+          <div class="reveal d2 flex justify-center md:justify-end">
+            <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+              <div class="pf w-full h-full rounded-3xl">
+                <img src="img/2.JPG" alt="Dina" loading="eager">
+              </div>
+              <a href="CV_DINAAULIYAH.pdf" download
+                class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg hover:opacity-90 transition">
+                View Resume </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══ skills ═══ -->
-<section id="skills" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
-  <div class="max-w-6xl mx-auto px-6">
-   <!-- Section Header -->
-    <div class="text-center mb-20 reveal d1">
-      <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">
-        My Skills
-      </p>
-
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-        Areas of Expertise
-      </h2>
-
-      <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-          <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
-        </div>
-        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">UI/UX Design</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Creating intuitive and user-centered interfaces, from wireframes to interactive prototypes. Focused on delivering clean and engaging user experiences using Figma and Design Thinking.</p>
-      </article>
-
-      <article class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
-        <div class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
-          <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-        </div>
-        <h3 class="font-display font-bold text-xl text-white mb-3">Web Development</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Building responsive and functional web applications using HTML, CSS, JavaScript, PHP, and databases. Focused on creating efficient and user-friendly digital solutions.</p>
-      </article>
-
-      <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-          <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M9 17v-6m4 6V7m4 10v-3M5 21h14"/></svg>
-        </div>
-        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Data Analytics</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Analyzing and visualizing data using Microsoft Excel, Pivot Tables, Python, and RapidMiner. Experienced in data preprocessing, exploratory data analysis, and creating meaningful insights to support better decision-making.</p>
-      </article>
-
-      <article class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
-        <div class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
-          <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        </div>
-        <h3 class="font-display font-bold text-xl text-white mb-3">Graphic Design</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Creating visual content such as logos, posters, invitations, presentations, social media content, and promotional materials. Experienced with CorelDRAW, Adobe Photoshop, Canva, and CapCut to produce creative and visually appealing designs.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- Education -->
-<section id="academic" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-
-    <!-- Section Header -->
-    <div class="text-center mb-20 reveal d1">
-      <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Education</p>
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">Academic Background</h2>
-      <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-20 items-center">
-
-      <!-- Timeline -->
-      <div class="relative reveal d2">
-
-        <!-- Vertical Line -->
-        <div class="absolute left-2 top-0 h-full w-0.5 bg-accent/20"></div>
-
-        <!-- Item 1 -->
-        <div class="relative pl-12 mb-16">
-
-          <!-- Dot -->
-          <div class="absolute left-0 top-2 w-5 h-5 rounded-full bg-accent border-4 border-white dark:border-zinc-950"></div>
-
-          <span class="font-semibold text-accent text-lg">
-            2023 – 2025
-          </span>
-
-          <h3 class="mt-2 text-3xl font-bold text-zinc-900 dark:text-white">
-            DIPA Makassar University
-          </h3>
-
-          <p class="mt-2 text-xl text-zinc-500 dark:text-zinc-400">
-            Bachelor's Degree in Informatics Engineering
+    <!-- ═══ skills ═══ -->
+    <section id="skills" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+      <div class="max-w-6xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-20 reveal d1">
+          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">
+            My Skills
           </p>
 
-          <p class="mt-3 text-lg text-zinc-400">
-            GPA: 3.85/4.00 (Cum Laude)
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
+            Areas of Expertise
+          </h2>
+
+          <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <article
+            class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">UI/UX Design</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Creating intuitive and user-centered
+              interfaces, from wireframes to interactive prototypes. Focused on delivering clean and engaging user
+              experiences using Figma and Design Thinking.</p>
+          </article>
+
+          <article
+            class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">Web Development</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">Building responsive and functional web applications using
+              HTML, CSS, JavaScript, PHP, and databases. Focused on creating efficient and user-friendly digital
+              solutions.</p>
+          </article>
+
+          <article
+            class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 17v-6m4 6V7m4 10v-3M5 21h14" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Data Analytics</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Analyzing and visualizing data using
+              Microsoft Excel, Pivot Tables, Python, and RapidMiner. Experienced in data preprocessing, exploratory data
+              analysis, and creating meaningful insights to support better decision-making.</p>
+          </article>
+
+          <article
+            class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">Graphic Design</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">Creating visual content such as logos, posters,
+              invitations, presentations, social media content, and promotional materials. Experienced with CorelDRAW,
+              Adobe Photoshop, Canva, and CapCut to produce creative and visually appealing designs.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="academic" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center mb-20 reveal d1">
+          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Education</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">Academic Background</h2>
+          <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+
+          <!-- Timeline -->
+          <div class="relative reveal d2">
+
+            <!-- Vertical Line -->
+            <div class="absolute left-2 top-0 h-full w-0.5 bg-accent/20"></div>
+
+            <!-- Item 1 -->
+            <div class="relative pl-12 mb-16">
+
+              <!-- Dot -->
+              <div
+                class="absolute left-0 top-2 w-5 h-5 rounded-full bg-accent border-4 border-white dark:border-zinc-950">
+              </div>
+
+              <span class="font-semibold text-accent text-lg">
+                2023 – 2025
+              </span>
+
+              <h3 class="mt-2 text-3xl font-bold text-zinc-900 dark:text-white">
+                DIPA Makassar University
+              </h3>
+
+              <p class="mt-2 text-xl text-zinc-500 dark:text-zinc-400">
+                Bachelor's Degree in Informatics Engineering
+              </p>
+
+              <p class="mt-3 text-lg text-zinc-400">
+                GPA: 3.85/4.00 (Cum Laude)
+              </p>
+
+            </div>
+
+            <!-- Item 2 -->
+            <div class="relative pl-12">
+
+              <!-- Dot -->
+              <div
+                class="absolute left-0 top-2 w-5 h-5 rounded-full bg-accent border-4 border-white dark:border-zinc-950">
+              </div>
+
+              <span class="font-semibold text-accent text-lg">
+                2020 – 2023
+              </span>
+
+              <h3 class="mt-2 text-3xl font-bold text-zinc-900 dark:text-white">
+                LP3I Polytechnic Makassar
+              </h3>
+
+              <p class="mt-2 text-xl text-zinc-500 dark:text-zinc-400">
+                Associate Degree in Information Management
+              </p>
+
+              <p class="mt-3 text-lg text-zinc-400">
+                GPA: 3.89/4.00
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- Graduation Photo -->
+          <div class="flex justify-center reveal d3">
+            <img src="img/4.JPG" alt="Graduation Photo"
+              class="w-72 rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 object-cover hover:scale-105 transition duration-500" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+      <div class="max-w-6xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-20 reveal d1">
+          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Experience</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">My Journey</h2>
+          <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
+        </div>
+        <div class="space-y-10">
+
+          <!-- Experience 1: FIFGROUP -->
+          <div class="reveal d2 bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-100 dark:border-zinc-800">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+              <div class="flex justify-center">
+                <div
+                  class="w-64 h-48 rounded-2xl bg-gradient-to-br from-blue-500/10 to-accent/20 border border-blue-200 dark:border-zinc-800 flex flex-col items-center justify-center p-6 text-center shadow-lg">
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-accent text-white flex items-center justify-center mb-3 shadow-md">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span class="font-display font-bold text-zinc-900 dark:text-white text-lg">FIFGROUP</span>
+                  <span class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Danastra</span>
+                </div>
+              </div>
+              <div class="md:col-span-2">
+                <span class="text-sm text-zinc-500 dark:text-zinc-400">May 2026 – Present</span>
+                <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Marketing Credit Executive</h3>
+                <p class="text-lg text-accent mt-1">FIFGROUP (Danastra) – Maros</p>
+                <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                  Responsible for identifying and developing prospective credit clients, reviewing and ensuring the
+                  completeness of credit application requirements, and meeting corporate sales and financing
+                  disbursement targets.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 2: Zazil Bakery -->
+          <div class="reveal d3 bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-100 dark:border-zinc-800">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+              <div class="flex justify-center">
+                <div
+                  class="w-64 h-48 rounded-2xl bg-gradient-to-br from-amber-500/10 to-orange-500/20 border border-amber-200 dark:border-zinc-800 flex flex-col items-center justify-center p-6 text-center shadow-lg">
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-amber-500 text-white flex items-center justify-center mb-3 shadow-md">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  </div>
+                  <span class="font-display font-bold text-zinc-900 dark:text-white text-lg">Zazil Bakery</span>
+                  <span class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Maros</span>
+                </div>
+              </div>
+              <div class="md:col-span-2">
+                <span class="text-sm text-zinc-500 dark:text-zinc-400">April 2026 – May 2026</span>
+                <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Admin</h3>
+                <p class="text-lg text-accent mt-1">Zazil Bakery – Maros</p>
+                <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                  Managed incoming goods verification against shipping documentation, conducted accurate stock data
+                  entry for inbound and outbound items, assisted in warehouse administration and stock audits, and
+                  delivered friendly customer service while maintaining clean and organized operational areas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 3: Bank Sulselbar -->
+          <div class="reveal d2 bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-100 dark:border-zinc-800">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+              <!-- Photo -->
+              <div class="flex justify-center">
+                <img src="img/7.jpg" alt="Bank Sulselbar Maros" class="w-64 rounded-2xl object-cover shadow-lg">
+              </div>
+              <!-- Content -->
+              <div class="md:col-span-2">
+                <span class="text-sm text-zinc-500 dark:text-zinc-400">August 2022 – February 2023</span>
+                <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Operational Assistant Intern</h3>
+                <p class="text-lg text-accent mt-1">PT. Bank Sulselbar Maros</p>
+                <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                  Supported daily operational and administrative activities, including document management, transaction
+                  recording, inventory organization, and mortgage loan (KPR) file registration while gaining practical
+                  experience in banking operations and professional workplace communication.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 4: TIC -->
+          <div class="reveal d3 bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-100 dark:border-zinc-800">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+              <!-- Photo -->
+              <div class="flex justify-center">
+                <img src="img/6.jpg" alt="Technology Information Club" class="w-64 rounded-2xl object-cover shadow-lg">
+              </div>
+              <!-- Content -->
+              <div class="md:col-span-2">
+                <span class="text-sm text-zinc-500 dark:text-zinc-400">August 2021 – August 2022</span>
+                <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Graphic Design Instructor</h3>
+                <p class="text-lg text-accent mt-1">Technology and Information Computer (TIC)</p>
+                <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">Taught members the fundamentals of
+                  graphic design using CorelDRAW and provided practical training in creating logos, posters,
+                  invitations, and other visual materials, while fostering creativity and design skills.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ projects ═══ -->
+    <section id="projects" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-20 reveal d1">
+          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Portfolio</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">Project Showcase</h2>
+          <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
+          <a href="projects.html"
+            class="reveal d1 inline-block mt-8 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors nl">All
+            Projects →</a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <article
+            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-64 md:h-80">
+              <img src="img/8.png" alt="Nexa Login" loading="lazy">
+            </div>
+            <div class="p-7">
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full">UI/UX</span>
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Figma</span>
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Design
+                  Thinking</span>
+              </div>
+              <a href="case-study.html">
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">ICT-Nexa Application -
+                  UI/UX Design </h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Focused on designing the user
+                interface and user experience of the ICT-NEXA application. Utilizing Figma and the Design Thinking
+                approach, this project produced a more intuitive, responsive, and user-centered design that aligns with
+                users' needs.</p>
+              <a href="case-study.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
+                study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg></a>
+            </div>
+          </article>
+
+          <article
+            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-64 md:h-80">
+              <img src="img/12.png" alt="RSAS" loading="lazy">
+            </div>
+            <div class="p-7">
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full">PHP</span>
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Web
+                  Development</span>
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Online
+                  Queue</span>
+              </div>
+              <a href="case-study.html">
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Online Hospital Queue
+                  Management System (Web-Based)</h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Developed a web-based hospital
+                queue management system that allows patients to obtain queue numbers online, track queue status in real
+                time, and access estimated service times, improving service efficiency and organization.</p>
+              <a href="case-study.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
+                study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg></a>
+            </div>
+          </article>
+
+
+          <article
+            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-64 md:h-80">
+              <img src="img/13.png" alt="RSAS" loading="lazy">
+            </div>
+            <div class="p-7">
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full">PHP</span>
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Web
+                  Development</span>
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Online
+                  Queue</span>
+              </div>
+              <a href="case-study.html">
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Dashboard Excel</h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Developed a web-based hospital
+                queue management system that allows patients to obtain queue numbers online, track queue status in real
+                time, and access estimated service times, improving service efficiency and organization.</p>
+              <a href="case-study.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
+                study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+          <div class="reveal order-2 md:order-1">
+            <div class="pf w-full aspect-square max-w-sm mx-auto rounded-3xl">
+              <img src="img/me.JPG" alt="Dina" loading="lazy">
+            </div>
+          </div>
+
+          <div class="order-1 md:order-2">
+            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">About me</p>
+            <h2
+              class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">
+              A bit about<br>who I am</h2>
+            <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+              I am a Cum Laude Informatics Engineering graduate (GPA 3.85/4.00) with experience in developing
+              academic-scale web applications and managing databases using MySQL. I am familiar with the entire software
+              development process, including system design, UI/UX design, application implementation, and testing
+            </p>
+            <p class="reveal d3 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
+              I possess strong analytical skills, discipline, and a high sense of responsibility. I am capable of
+              working both independently and collaboratively in a team environment, and I am always eager to learn new
+              technologies and continuously improve my skills.
+            </p>
+            <div class="reveal d4">
+              <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Stack &amp;
+                tools</p>
+              <div class="flex flex-wrap gap-2" role="list" aria-label="Skills">
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">UI/UX</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">PHP</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Figma</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">HTML
+                  / CSS</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Android
+                  Studio</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Excel</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">RapidMiner</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Python</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Canva</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Capcut</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">MySQL</span>
+                <span role="listitem"
+                  class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Adobe
+                  Photoshop</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ CERTIFICATES ═════════ -->
+    <section id="certificates" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center mb-16 reveal">
+          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">
+            Achievements
           </p>
 
-        </div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
+            Certificates
+          </h2>
 
-        <!-- Item 2 -->
-        <div class="relative pl-12">
+          <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
 
-          <!-- Dot -->
-          <div class="absolute left-0 top-2 w-5 h-5 rounded-full bg-accent border-4 border-white dark:border-zinc-950"></div>
-
-          <span class="font-semibold text-accent text-lg">
-            2020 – 2023
-          </span>
-
-          <h3 class="mt-2 text-3xl font-bold text-zinc-900 dark:text-white">
-            LP3I Polytechnic Makassar
-          </h3>
-
-          <p class="mt-2 text-xl text-zinc-500 dark:text-zinc-400">
-            Associate Degree in Information Management
+          <p class="mt-6 text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto">
+            Professional certifications, training programs, and achievements that reflect my continuous learning and
+            skill development.
           </p>
-
-          <p class="mt-3 text-lg text-zinc-400">
-            GPA: 3.89/4.00
-          </p>
-
         </div>
 
-      </div>
 
-      <!-- Graduation Photo -->
-      <div class="flex justify-center reveal d3">
-        <img
-          src="img/4.JPG"
-          alt="Graduation Photo"
-          class="w-72 rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 object-cover hover:scale-105 transition duration-500"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Certificates Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<!-- Experience -->
-<section id="experience" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
-  <div class="max-w-6xl mx-auto px-6">
-    <!-- Section Header -->
-    <div class="text-center mb-20 reveal d1">
-      <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Experience</p>
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">My Journey</h2>
-      <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
-    </div>
-    <div class="space-y-10">
-
-      <!-- Experience 1 -->
-      <div class="reveal d2 bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-100 dark:border-zinc-800">
-        <div class="grid md:grid-cols-3 gap-8 items-center">
-          <!-- Photo -->
-          <div class="flex justify-center">
-            <img
-              src="img/7.jpg"
-              alt="Bank Sulselbar Maros"
-              class="w-64 rounded-2xl object-cover shadow-lg">
-          </div>
-          <!-- Content -->
-          <div class="md:col-span-2">
-            <span class="text-sm text-zinc-500 dark:text-zinc-400">August 2022 – February 2023</span>
-            <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Operational Assistant Intern</h3>
-            <p class="text-lg text-accent mt-1">PT. Bank Sulselbar Maros</p>
-            <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Supported daily operational and administrative activities, including document management, transaction recording, inventory organization, and mortgage loan (KPR) file registration while gaining practical experience in banking operations and professional workplace communication.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Experience 2 -->
-      <div class="reveal d3 bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-100 dark:border-zinc-800">
-        <div class="grid md:grid-cols-3 gap-8 items-center">
-          <!-- Photo -->
-          <div class="flex justify-center">
-            <img
-              src="img/6.jpg"
-              alt="Technology Information Club"
-              class="w-64 rounded-2xl object-cover shadow-lg"
-            >
-          </div>
-          <!-- Content -->
-          <div class="md:col-span-2">
-            <span class="text-sm text-zinc-500 dark:text-zinc-400">August 2021 – August 2022</span>
-            <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Graphic Design Instructor</h3>
-            <p class="text-lg text-accent mt-1">Technology and Information Computer (TIC)</p>
-            <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">Taught members the fundamentals of graphic design using CorelDRAW and provided practical training in creating logos, posters, invitations, and other visual materials, while fostering creativity and design skills.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ projects ═══ -->
-<section id="projects" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <!-- Section Header -->
-    <div class="text-center mb-20 reveal d1">
-      <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Portfolio</p>
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">Project Showcase</h2>
-      <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
-      <a href="projects.html"class="reveal d1 inline-block mt-8 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors nl">All Projects →</a>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-64 md:h-80">
-          <img src="img/8.png" alt="Nexa Login" loading="lazy">
-        </div>
-        <div class="p-7">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full">UI/UX</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Figma</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Design Thinking</span>
-          </div>
-          <a href="case-study.html">
-            <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">ICT-Nexa Application - UI/UX Design </h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Focused on designing the user interface and user experience of the ICT-NEXA application. Utilizing Figma and the Design Thinking approach, this project produced a more intuitive, responsive, and user-centered design that aligns with users' needs.</p>
-          <a href="case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        </div>
-      </article>
-
-      <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-64 md:h-80">
-          <img src="img/12.png" alt="RSAS" loading="lazy">
-        </div>
-        <div class="p-7">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full">PHP</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Web Development</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Online Queue</span>
-          </div>
-          <a href="case-study.html">
-            <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Online Hospital Queue Management System (Web-Based)</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Developed a web-based hospital queue management system that allows patients to obtain queue numbers online, track queue status in real time, and access estimated service times, improving service efficiency and organization.</p>
-          <a href="case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        </div>
-      </article>
-      
-
-      <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-64 md:h-80">
-          <img src="img/13.png" alt="RSAS" loading="lazy">
-        </div>
-        <div class="p-7">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full">PHP</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Web Development</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Online Queue</span>
-          </div>
-          <a href="case-study.html">
-            <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Dashboard Excel</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Developed a web-based hospital queue management system that allows patients to obtain queue numbers online, track queue status in real time, and access estimated service times, improving service efficiency and organization.</p>
-          <a href="case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ABOUT ═══ -->
-<section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-
-      <div class="reveal order-2 md:order-1">
-        <div class="pf w-full aspect-square max-w-sm mx-auto rounded-3xl">
-          <img src="img/me.JPG" alt="Dina" loading="lazy">
-        </div>
-      </div>
-
-      <div class="order-1 md:order-2">
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">About me</p>
-        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">A bit about<br>who I am</h2>
-        <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-          I am a Cum Laude Informatics Engineering graduate (GPA 3.85/4.00) with experience in developing academic-scale web applications and managing databases using MySQL. I am familiar with the entire software development process, including system design, UI/UX design, application implementation, and testing
-        </p>
-        <p class="reveal d3 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
-        I possess strong analytical skills, discipline, and a high sense of responsibility. I am capable of working both independently and collaboratively in a team environment, and I am always eager to learn new technologies and continuously improve my skills.
-        </p>
-        <div class="reveal d4">
-          <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Stack &amp; tools</p>
-          <div class="flex flex-wrap gap-2" role="list" aria-label="Skills">
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">UI/UX</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">PHP</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Figma</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">HTML / CSS</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Android Studio</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Excel</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">RapidMiner</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Python</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Canva</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Capcut</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">MySQL</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Adobe Photoshop</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═════════ CERTIFICATES ═════════ -->
-<section id="certificates" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
-
-  <div class="max-w-6xl mx-auto px-6">
-
-    <!-- Section Header -->
-    <div class="text-center mb-16 reveal">
-      <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">
-        Achievements
-      </p>
-
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-        Certificates
-      </h2>
-
-      <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
-
-      <p class="mt-6 text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto">
-        Professional certifications, training programs, and achievements that reflect my continuous learning and skill development.
-      </p>
-    </div>
-
-
-    <!-- Certificates Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Certificate 1 -->
-      <article class="card-h reveal d1 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="overflow-hidden cursor-pointer">
-          <img
-            src="img/C1.jpg"
-            alt="Certificate 1"
-            class="w-full h-60 object-cover hover:scale-105 transition duration-500"
-            onclick="openImage(this.src)">
-        </div>
-
-        <div class="p-6">
-          <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Intro to Data Analytics</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">Revo U • 2025</p>
-        </div>
-      </article>
-
-      <!-- Certificate 2 -->
-      <article class="card-h reveal d2 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="overflow-hidden cursor-pointer">
-          <img
-            src="img/C2.jpg"
-            alt="Certificate 2"
-            class="w-full h-60 object-cover hover:scale-105 transition duration-500"
-            onclick="openImage(this.src)">
-        </div>
-        <div class="p-6">
-          <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">TOEFL</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">Webster English Course • 2026</p>
-        </div>
-      </article>
-
-      <!-- Certificate 3 -->
-      <article class="card-h reveal d3 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="overflow-hidden cursor-pointer">
-          <img
-            src="img/C3.jpg"
-            alt="Certificate 3"
-            class="w-full h-60 object-cover hover:scale-105 transition duration-500"
-            onclick="openImage(this.src)">
-        </div>
-        <div class="p-6">
-          <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Future proof your career as web developer in the age AI</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">KeDai Computerworks • 2024</p>
-        </div>
-
-      </article>
-      <!-- Certificate 4 -->
-      <article class="card-h reveal d3 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-
-        <div class="overflow-hidden cursor-pointer">
-          <img
-            src="img/C4.jpg"
-            alt="Certificate 3"
-            class="w-full h-60 object-cover hover:scale-105 transition duration-500"
-            onclick="openImage(this.src)">
-        </div>
-        <div class="p-6">
-          <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Operator Komputer Muda</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">LSP Telematika • 2023</p>
-        </div>
-
-      </article>
-
-      <!-- Certificate 5 -->
-      <article class="card-h reveal d3 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-
-        <div class="overflow-hidden cursor-pointer">
-          <img
-            src="img/C5.jpg"
-            alt="Certificate 3"
-            class="w-full h-60 object-cover hover:scale-105 transition duration-500"
-            onclick="openImage(this.src)">
-        </div>
-
-        <div class="p-6">
-          <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Magang Bank Sulselbar</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">Bank Sulselbar • 2023</p>
-        </div>
-      </article>
-
-      <!-- Certificate 6 -->
-      <article class="card-h reveal d3 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="overflow-hidden cursor-pointer">
-          <img
-            src="img/C6.jpg"
-            alt="Certificate 3"
-            class="w-full h-60 object-cover hover:scale-105 transition duration-500"
-            onclick="openImage(this.src)">
-        </div>
-        <div class="p-6">
-          <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Trial Class For Jago Excel</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">Learn byte • 2025</p>
-        </div>
-
-      </article>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ═══ CONTACT ═══ -->
-<section id="contact" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-
-    <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
-
-      <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"></div>
-
-      <div class="relative z-10">
-
-        <div class="text-center mb-14 reveal">
-          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Get In Touch</p>
-          <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-5">Let's Work Together</h2>
-          <p class="max-w-2xl mx-auto text-zinc-400 leading-relaxed">Feel free to reach out for collaborations, opportunities, or simply to say hello. I'm always open to learning and new experiences.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          <!-- Email -->
-          <a href="mailto:dinaauliyah27@gmail.com" class="group reveal d1 bg-zinc-800/70 rounded-3xl p-8 border border-zinc-700 hover:border-accent transition-all duration-300 text-center">
-
-            <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-zinc-800 group-hover:bg-accent/20 transition-colors mb-6 mx-auto">
-              <svg class="w-7 h-7 text-zinc-300 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16z"/></svg>
+          <!-- Certificate 1 -->
+          <article
+            class="card-h reveal d1 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="overflow-hidden cursor-pointer">
+              <img src="img/C1.jpg" alt="Certificate 1"
+                class="w-full h-60 object-cover hover:scale-105 transition duration-500" onclick="openImage(this.src)">
             </div>
 
-            <h3 class="font-semibold text-xl text-white mb-3">Email</h3>
-            <p class="text-zinc-400 group-hover:text-white transition-colors text-sm">dinaauliyah27@gmail.com</p>
+            <div class="p-6">
+              <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Intro to Data Analytics</h3>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400">Revo U • 2025</p>
+            </div>
+          </article>
 
-          </a>
+          <!-- Certificate 2 -->
+          <article
+            class="card-h reveal d2 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="overflow-hidden cursor-pointer">
+              <img src="img/C2.jpg" alt="Certificate 2"
+                class="w-full h-60 object-cover hover:scale-105 transition duration-500" onclick="openImage(this.src)">
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">TOEFL</h3>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400">Webster English Course • 2026</p>
+            </div>
+          </article>
 
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/dina-auliyah-aa399638a" target="_blank" class="group reveal d2 bg-zinc-800/70 rounded-3xl p-8 border border-zinc-700 hover:border-accent transition-all duration-300 text-center">
-
-            <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-zinc-800 group-hover:bg-accent/20 transition-colors mb-6 mx-auto">
-              <svg class="w-7 h-7 text-zinc-300 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          <!-- Certificate 3 -->
+          <article
+            class="card-h reveal d3 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="overflow-hidden cursor-pointer">
+              <img src="img/C3.jpg" alt="Certificate 3"
+                class="w-full h-60 object-cover hover:scale-105 transition duration-500" onclick="openImage(this.src)">
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Future proof your career as web
+                developer in the age AI</h3>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400">KeDai Computerworks • 2024</p>
             </div>
 
-            <h3 class="font-semibold text-xl text-white mb-3">LinkedIn</h3>
-            <p class="text-zinc-400 group-hover:text-white transition-colors text-sm">Dina Auliyah</p>
+          </article>
+          <!-- Certificate 4 -->
+          <article
+            class="card-h reveal d3 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
 
-          </a>
-
-          <!-- WhatsApp -->
-          <a href="https://wa.me/6287846833314" target="_blank" class="group reveal d3 bg-zinc-800/70 rounded-3xl p-8 border border-zinc-700 hover:border-accent transition-all duration-300 text-center">
-
-            <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-zinc-800 group-hover:bg-accent/20 transition-colors mb-6 mx-auto">
-              <svg class="w-7 h-7 text-zinc-300 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.5 2 2 6.49 2 12.03c0 1.77.46 3.5 1.34 5.02L2 22l5.09-1.33a9.97 9.97 0 004.95 1.34h.01C17.58 22 22 17.51 22 11.97 22 6.43 17.58 2 12.04 2zm5.82 14.07c-.24.67-1.41 1.28-1.94 1.36-.5.07-1.13.1-1.82-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.85-4.23-5-4.43-.15-.2-1.2-1.6-1.2-3.06 0-1.46.76-2.18 1.03-2.48.27-.3.59-.37.79-.37h.57c.18 0 .42.01.64.54.24.58.81 1.98.88 2.13.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.37-.45.5-.15.15-.31.31-.13.61.18.3.79 1.31 1.7 2.12 1.17 1.04 2.16 1.36 2.46 1.51.3.15.48.13.66-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.08.12.08.69-.16 1.36z"/></svg>
+            <div class="overflow-hidden cursor-pointer">
+              <img src="img/C4.jpg" alt="Certificate 3"
+                class="w-full h-60 object-cover hover:scale-105 transition duration-500" onclick="openImage(this.src)">
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Operator Komputer Muda</h3>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400">LSP Telematika • 2023</p>
             </div>
 
-            <h3 class="font-semibold text-xl text-white mb-3">WhatsApp</h3>
-            <p class="text-zinc-400 group-hover:text-white transition-colors text-sm">087846833314</p>
+          </article>
 
-          </a>
+          <!-- Certificate 5 -->
+          <article
+            class="card-h reveal d3 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
 
-          <!-- Instagram -->
-          <a href="https://instagram.com/dinaulyh_" target="_blank" class="group reveal d4 bg-zinc-800/70 rounded-3xl p-8 border border-zinc-700 hover:border-accent transition-all duration-300 text-center">
-
-            <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-zinc-800 group-hover:bg-accent/20 transition-colors mb-6 mx-auto">
-              <svg class="w-7 h-7 text-zinc-300 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7.25A4.75 4.75 0 1112 16.75 4.75 4.75 0 0112 7.25zm0 1.5A3.25 3.25 0 1012 15.25 3.25 3.25 0 0012 8.75zm5.25-2a1 1 0 110 2 1 1 0 010-2z"/></svg>
+            <div class="overflow-hidden cursor-pointer">
+              <img src="img/C5.jpg" alt="Certificate 3"
+                class="w-full h-60 object-cover hover:scale-105 transition duration-500" onclick="openImage(this.src)">
             </div>
 
-            <h3 class="font-semibold text-xl text-white mb-3">Instagram</h3>
-            <p class="text-zinc-400 group-hover:text-white transition-colors text-sm">@dinaulyh_</p>
+            <div class="p-6">
+              <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Magang Bank Sulselbar</h3>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400">Bank Sulselbar • 2023</p>
+            </div>
+          </article>
 
-          </a>
+          <!-- Certificate 6 -->
+          <article
+            class="card-h reveal d3 bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="overflow-hidden cursor-pointer">
+              <img src="img/C6.jpg" alt="Certificate 3"
+                class="w-full h-60 object-cover hover:scale-105 transition duration-500" onclick="openImage(this.src)">
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-lg text-zinc-900 dark:text-white mb-2">Trial Class For Jago Excel</h3>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400">Learn byte • 2025</p>
+            </div>
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
+
+          <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div class="relative z-10">
+
+            <div class="text-center mb-14 reveal">
+              <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Get In Touch</p>
+              <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-5">Let's Work Together</h2>
+              <p class="max-w-2xl mx-auto text-zinc-400 leading-relaxed">Feel free to reach out for collaborations,
+                opportunities, or simply to say hello. I'm always open to learning and new experiences.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+              <!-- Email -->
+              <a href="mailto:dinaauliyah27@gmail.com"
+                class="group reveal d1 bg-zinc-800/70 rounded-3xl p-8 border border-zinc-700 hover:border-accent transition-all duration-300 text-center">
+
+                <div
+                  class="w-14 h-14 flex items-center justify-center rounded-2xl bg-zinc-800 group-hover:bg-accent/20 transition-colors mb-6 mx-auto">
+                  <svg class="w-7 h-7 text-zinc-300 group-hover:scale-110 transition-transform duration-300"
+                    fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16z" />
+                  </svg>
+                </div>
+
+                <h3 class="font-semibold text-xl text-white mb-3">Email</h3>
+                <p class="text-zinc-400 group-hover:text-white transition-colors text-sm">dinaauliyah27@gmail.com</p>
+
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/dina-auliyah-aa399638a" target="_blank"
+                class="group reveal d2 bg-zinc-800/70 rounded-3xl p-8 border border-zinc-700 hover:border-accent transition-all duration-300 text-center">
+
+                <div
+                  class="w-14 h-14 flex items-center justify-center rounded-2xl bg-zinc-800 group-hover:bg-accent/20 transition-colors mb-6 mx-auto">
+                  <svg class="w-7 h-7 text-zinc-300 group-hover:scale-110 transition-transform duration-300"
+                    fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z" />
+                  </svg>
+                </div>
+
+                <h3 class="font-semibold text-xl text-white mb-3">LinkedIn</h3>
+                <p class="text-zinc-400 group-hover:text-white transition-colors text-sm">Dina Auliyah</p>
+
+              </a>
+
+              <!-- WhatsApp -->
+              <a href="https://wa.me/6287846833314" target="_blank"
+                class="group reveal d3 bg-zinc-800/70 rounded-3xl p-8 border border-zinc-700 hover:border-accent transition-all duration-300 text-center">
+
+                <div
+                  class="w-14 h-14 flex items-center justify-center rounded-2xl bg-zinc-800 group-hover:bg-accent/20 transition-colors mb-6 mx-auto">
+                  <svg class="w-7 h-7 text-zinc-300 group-hover:scale-110 transition-transform duration-300"
+                    fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12.04 2C6.5 2 2 6.49 2 12.03c0 1.77.46 3.5 1.34 5.02L2 22l5.09-1.33a9.97 9.97 0 004.95 1.34h.01C17.58 22 22 17.51 22 11.97 22 6.43 17.58 2 12.04 2zm5.82 14.07c-.24.67-1.41 1.28-1.94 1.36-.5.07-1.13.1-1.82-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.85-4.23-5-4.43-.15-.2-1.2-1.6-1.2-3.06 0-1.46.76-2.18 1.03-2.48.27-.3.59-.37.79-.37h.57c.18 0 .42.01.64.54.24.58.81 1.98.88 2.13.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.37-.45.5-.15.15-.31.31-.13.61.18.3.79 1.31 1.7 2.12 1.17 1.04 2.16 1.36 2.46 1.51.3.15.48.13.66-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.08.12.08.69-.16 1.36z" />
+                  </svg>
+                </div>
+
+                <h3 class="font-semibold text-xl text-white mb-3">WhatsApp</h3>
+                <p class="text-zinc-400 group-hover:text-white transition-colors text-sm">087846833314</p>
+
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://instagram.com/dinaulyh_" target="_blank"
+                class="group reveal d4 bg-zinc-800/70 rounded-3xl p-8 border border-zinc-700 hover:border-accent transition-all duration-300 text-center">
+
+                <div
+                  class="w-14 h-14 flex items-center justify-center rounded-2xl bg-zinc-800 group-hover:bg-accent/20 transition-colors mb-6 mx-auto">
+                  <svg class="w-7 h-7 text-zinc-300 group-hover:scale-110 transition-transform duration-300"
+                    fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7.25A4.75 4.75 0 1112 16.75 4.75 4.75 0 0112 7.25zm0 1.5A3.25 3.25 0 1012 15.25 3.25 3.25 0 0012 8.75zm5.25-2a1 1 0 110 2 1 1 0 010-2z" />
+                  </svg>
+                </div>
+
+                <h3 class="font-semibold text-xl text-white mb-3">Instagram</h3>
+                <p class="text-zinc-400 group-hover:text-white transition-colors text-sm">@dinaulyh_</p>
+
+              </a>
+
+            </div>
+
+          </div>
 
         </div>
 
       </div>
+    </section>
 
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══ TESTIMONIALS ═══ -->
-<!-- <section id="reviews" class="py-24">
+    <!-- ═══ TESTIMONIALS ═══ -->
+    <!-- <section id="reviews" class="py-24">
   <div class="max-w-6xl mx-auto px-6">
     <div class="mb-14">
       <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Social proof</p>
@@ -762,8 +1092,8 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   </div>
 </section> -->
 
-<!-- ═══ BLOG ═══ -->
-<!-- <section id="blog" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+    <!-- ═══ BLOG ═══ -->
+    <!-- <section id="blog" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
       <div>
@@ -830,8 +1160,8 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   </div>
 </section> -->
 
-<!-- ═══ CONTACT ═══ -->
-<!-- <section id="contact" class="py-24">
+    <!-- ═══ CONTACT ═══ -->
+    <!-- <section id="contact" class="py-24">
   <div class="max-w-6xl mx-auto px-6">
     <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
       <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
@@ -903,9 +1233,9 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   </div>
 </section> -->
 
-</main>
+  </main>
 
-<!-- <footer class="border-t border-zinc-100 dark:border-zinc-900">
+  <!-- <footer class="border-t border-zinc-100 dark:border-zinc-900">
   <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
     <p class="text-sm text-zinc-400">© <span id="yr"></span> Eliott. All rights reserved. <br> Developed by <a href="https://lbegey78.gumroad.com/" target="_blank" class="font-bold">Laurent Begey</a> • Distributed by <a href="https://themewagon.com/" target="_blank" class="font-bold">ThemeWagon</a></p>
     <p class="text-xs text-zinc-500">Built with
@@ -915,80 +1245,75 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
     </p>
   </div>
 </footer> -->
-<!-- IMAGE MODAL -->
-<div
-  id="imageModal"
-  class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-6">
+  <!-- IMAGE MODAL -->
+  <div id="imageModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-6">
 
-  <button
-    onclick="closeImage()"
-    class="absolute top-6 right-8 text-white text-5xl hover:text-accent transition">
-    &times;
-  </button>
+    <button onclick="closeImage()" class="absolute top-6 right-8 text-white text-5xl hover:text-accent transition">
+      &times;
+    </button>
 
-  <img
-    id="modalImage"
-    class="max-w-[90%] max-h-[90vh] rounded-3xl shadow-2xl">
+    <img id="modalImage" class="max-w-[90%] max-h-[90vh] rounded-3xl shadow-2xl">
 
-</div>
+  </div>
 
 
-<!-- JAVASCRIPT -->
-<script>
-  function openImage(src) {
-    document.getElementById("modalImage").src = src;
-    document.getElementById("imageModal").classList.remove("hidden");
-    document.getElementById("imageModal").classList.add("flex");
-  }
+  <!-- JAVASCRIPT -->
+  <script>
+    function openImage(src) {
+      document.getElementById("modalImage").src = src;
+      document.getElementById("imageModal").classList.remove("hidden");
+      document.getElementById("imageModal").classList.add("flex");
+    }
 
-  function closeImage() {
-    document.getElementById("imageModal").classList.remove("flex");
-    document.getElementById("imageModal").classList.add("hidden");
-  }
-</script>
+    function closeImage() {
+      document.getElementById("imageModal").classList.remove("flex");
+      document.getElementById("imageModal").classList.add("hidden");
+    }
+  </script>
 
-<script>
-function app() {
-  return {
-    dark: false,
-    mm: false,
-    sc: false,
-    s: 'hero',
+  <script>
+    function app() {
+      return {
+        dark: false,
+        mm: false,
+        sc: false,
+        s: 'hero',
 
-    init() {
-      // dark mode
-      this.dark = localStorage.getItem('theme') === 'dark' ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-      this.$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+        init() {
+          // dark mode
+          this.dark = localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          this.$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
 
-      // scroll
-      window.addEventListener('scroll', () => {
-        this.sc = window.scrollY > 20;
-        this.updateSection();
-      }, { passive: true });
+          // scroll
+          window.addEventListener('scroll', () => {
+            this.sc = window.scrollY > 20;
+            this.updateSection();
+          }, { passive: true });
 
-      // reveal
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+          // reveal
+          const io = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+          }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+          document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-      // year
-      document.getElementById('yr').textContent = new Date().getFullYear();
-    },
+          // year
+          document.getElementById('yr').textContent = new Date().getFullYear();
+        },
 
-    updateSection() {
-      const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
-      if (atBottom) { this.s = 'contact'; return; }
-      const ids = ['skills','academic','projects','about','experience','contact','hero'];
-      for (const id of ids) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
+        updateSection() {
+          const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
+          if (atBottom) { this.s = 'contact'; return; }
+          const ids = ['skills', 'academic', 'projects', 'about', 'experience', 'contact', 'hero'];
+          for (const id of ids) {
+            const el = document.getElementById(id);
+            if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 
 </body>
+
 </html>
