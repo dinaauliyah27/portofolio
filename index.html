@@ -556,17 +556,13 @@
           <div class="reveal d3 bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-100 dark:border-zinc-800">
             <div class="grid md:grid-cols-3 gap-8 items-center">
               <div class="flex justify-center">
-                <div
-                  class="w-64 h-48 rounded-2xl bg-gradient-to-br from-amber-500/10 to-orange-500/20 border border-amber-200 dark:border-zinc-800 flex flex-col items-center justify-center p-6 text-center shadow-lg">
-                  <div
-                    class="w-16 h-16 rounded-2xl bg-amber-500 text-white flex items-center justify-center mb-3 shadow-md">
-                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                  </div>
-                  <span class="font-display font-bold text-zinc-900 dark:text-white text-lg">Zazil Bakery</span>
-                  <span class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Maros</span>
+                <div class="w-64 h-48 rounded-2xl bg-white flex items-center justify-center p-4 border border-zinc-200 dark:border-zinc-800 shadow-lg overflow-hidden group">
+                  <img
+                    src="img/ZAZIL.jpg"
+                    alt="Zazil Bakery Maros"
+                    class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500"
+                    onerror="if (this.src.endsWith('ZAZIL.jpg')) { this.src = 'img/zazil.jpg'; } else if (this.src.endsWith('zazil.jpg')) { this.src = 'img/ZAZIL.JPG'; }"
+                  />
                 </div>
               </div>
               <div class="md:col-span-2">
