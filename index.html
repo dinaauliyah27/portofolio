@@ -532,11 +532,12 @@
           <div class="reveal d2 bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-100 dark:border-zinc-800">
             <div class="grid md:grid-cols-3 gap-8 items-center">
               <div class="flex justify-center">
-                <img
-                  src="img/FIF.jpg"
-                  alt="FIFGROUP Danastra Maros"
-                  class="w-64 rounded-2xl object-cover shadow-lg"
-                />
+                <div
+                  class="w-64 h-48 rounded-2xl bg-white flex items-center justify-center p-4 border border-zinc-200 dark:border-zinc-800 shadow-lg overflow-hidden group">
+                  <img src="img/FIF.jpg" alt="FIFGROUP Danastra Maros"
+                    class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500"
+                    onerror="if (this.src.endsWith('FIF.jpg')) { this.src = 'img/fif.jpg'; } else if (this.src.endsWith('fif.jpg')) { this.src = 'img/FIF.JPG'; }" />
+                </div>
               </div>
               <div class="md:col-span-2">
                 <span class="text-sm text-zinc-500 dark:text-zinc-400">May 2026 – Present</span>
@@ -711,14 +712,20 @@
                 <span
                   class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full">Excel</span>
                 <span
-                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Data Analytics</span>
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Data
+                  Analytics</span>
                 <span
-                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Pivot Table</span>
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Pivot
+                  Table</span>
               </div>
               <a href="case-study.html">
-                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Interactive Excel Data Dashboard</h3>
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Interactive Excel Data
+                  Dashboard</h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Designed and implemented an interactive reporting dashboard in Microsoft Excel utilizing Pivot Tables, dynamic formulas, and custom data visualizations to analyze operational performance metrics and support data-driven business decisions.</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Designed and implemented an
+                interactive reporting dashboard in Microsoft Excel utilizing Pivot Tables, dynamic formulas, and custom
+                data visualizations to analyze operational performance metrics and support data-driven business
+                decisions.</p>
               <a href="case-study.html"
                 class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
                 study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
