@@ -14,7 +14,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Studi Kasus Sistem Antrean Rumah Sakit Online Berbasis Web oleh Dina Auliyah."/>
+  <meta name="description" content="Studi Kasus Sistem Antrean RS Online oleh Dina Auliyah."/>
   <meta name="author" content="Dina Auliyah"/>
   <link rel="icon" type="image/png" href="img/DA.png">
   <title>Sistem Antrean RS Online — Studi Kasus · Dina Auliyah</title>
@@ -43,11 +43,15 @@
     .btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,.18);transform:skewX(-20deg);transition:left .4s cubic-bezier(.4,0,.2,1);}
     .btn-primary:hover::after{left:160%;}
     [x-cloak]{display:none!important;}
+    .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
+    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
     .progress-bar{position:fixed;top:0;left:0;height:3px;background:#3B82F6;z-index:100;transition:width .1s linear;}
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1);}
     .reveal.visible{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
     .card-h{transition:transform .28s cubic-bezier(.4,0,.2,1),border-color .18s;}
     .card-h:hover{transform:translateY(-4px);}
+    .img-caption{font-size:.8rem;color:#a1a1aa;text-align:center;margin-top:.5rem;}
   </style>
 </head>
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
@@ -99,60 +103,122 @@
 
       <!-- Tags -->
       <div class="flex flex-wrap gap-2 mb-5">
-        <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full">PHP & MySQL</span>
-        <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Web Development</span>
-        <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Sistem Antrean</span>
+        <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full">PHP & Web</span>
+        <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">MySQL</span>
+        <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">CodeIgniter</span>
       </div>
 
       <!-- Title -->
-      <h1 class="font-display font-bold text-3xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-5">
-        Sistem Manajemen Antrean<br>Rumah Sakit Online
+      <h1 class="font-display font-bold text-3xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-3">
+        Sistem Antrean RS Online<br>Pengembangan Web
       </h1>
+      <p class="text-sm text-zinc-400 dark:text-zinc-500 italic mb-6">
+        (Online Hospital Queue Management System — Web Development Case Study)
+      </p>
 
       <p class="text-base text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl mb-10">
-        Aplikasi web berbasis PHP & MySQL yang memungkinkan pasien mengambil nomor antrean secara digital, memantau posisi antrean secara <em>real-time</em>, dan memperkirakan waktu panggil dokter.
+        Pengembangan aplikasi web berbasis PHP untuk manajemen antrean rumah sakit yang efisien, memudahkan pendaftaran pasien dan pemantauan antrean secara <em>real-time</em>.
       </p>
 
       <!-- Meta -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14 p-5 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-100 dark:border-zinc-800">
         <div>
-          <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Kategori</p>
-          <p class="text-sm font-medium text-zinc-900 dark:text-white">Web Development</p>
+          <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Klien</p>
+          <p class="text-sm font-medium text-zinc-900 dark:text-white">Internal Project</p>
         </div>
         <div>
           <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Peran</p>
-          <p class="text-sm font-medium text-zinc-900 dark:text-white">Fullstack Developer</p>
+          <p class="text-sm font-medium text-zinc-900 dark:text-white">Full-Stack Developer</p>
         </div>
         <div>
-          <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Teknologi</p>
-          <p class="text-sm font-medium text-zinc-900 dark:text-white">PHP, MySQL, JS</p>
+          <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Kategori</p>
+          <p class="text-sm font-medium text-zinc-900 dark:text-white">Web Application</p>
         </div>
         <div>
-          <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Status</p>
-          <p class="text-sm font-medium text-zinc-900 dark:text-white">Selesai</p>
+          <p class="text-xs text-zinc-400 uppercase tracking-widest mb-1">Tech Stack</p>
+          <p class="text-sm font-medium text-zinc-900 dark:text-white">PHP, MySQL, Bootstrap</p>
         </div>
-      </div>
-
-      <!-- Preview Image -->
-      <div class="mb-14 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md cursor-pointer" onclick="openImage('img/12.png')">
-        <img src="img/12.png" alt="Tampilan Sistem Antrean RS Online" class="w-full object-cover hover:scale-[1.02] transition duration-500">
-        <p class="text-xs text-zinc-400 text-center py-2 bg-zinc-50 dark:bg-zinc-900">Klik untuk perbesar</p>
       </div>
 
       <!-- Overview -->
-      <div class="mb-12">
+      <div class="mb-14">
         <h2 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Tentang Proyek</h2>
-        <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-          Sistem ini dirancang untuk mengurangi penumpukan antrean fisik di rumah sakit. Pasien dapat mendaftarkan diri dan mendapatkan e-tiket secara daring, sehingga tidak perlu menunggu lama di area loket.
+        <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">
+          Sistem Antrean RS Online dikembangkan untuk mengatasi masalah penumpukan pasien dan ketidakefisienan dalam proses pendaftaran di rumah sakit. Sistem ini memungkinkan pasien untuk mengambil nomor antrean, dan staf rumah sakit dapat mengelola data pasien, memonitor antrean, serta menghasilkan laporan yang komprehensif.
         </p>
-        <ul class="space-y-2 text-sm text-zinc-500 dark:text-zinc-400">
-          <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span> E-Tiket antrean digital otomatis</li>
-          <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span> Pemantauan posisi antrean real-time</li>
-          <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span> Estimasi waktu pemanggilan dokter</li>
-          <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span> Dashboard manajemen loket petugas</li>
-          <li class="flex items-start gap-2"><span class="text-accent mt-0.5">✓</span> Laporan rekapitulasi kunjungan pasien</li>
-        </ul>
       </div>
+
+      <!-- Screen Gallery -->
+      <section class="bg-zinc-50 dark:bg-zinc-900/50 rounded-3xl p-8 border border-zinc-100 dark:border-zinc-800 mb-14">
+        <div class="text-center mb-8">
+          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-1">Tampilan Aplikasi</p>
+          <h2 class="font-display font-bold text-2xl text-zinc-900 dark:text-white">Galeri Layar</h2>
+          <p class="text-xs text-zinc-400 mt-2">Klik gambar untuk perbesar</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <article class="card-h bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-sm">
+            <div class="h-44 overflow-hidden cursor-pointer" onclick="openImage('img/rsas/Login.jpeg')">
+              <img src="img/rsas/Login.jpeg" alt="Login" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-accent font-medium">01. Autentikasi</span>
+              <h3 class="font-bold text-sm text-zinc-900 dark:text-white mt-1">Halaman Login Admin</h3>
+            </div>
+          </article>
+
+          <article class="card-h bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-sm">
+            <div class="h-44 overflow-hidden cursor-pointer" onclick="openImage('img/rsas/Dashboard.jpeg')">
+              <img src="img/rsas/Dashboard.jpeg" alt="Dashboard" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-accent font-medium">02. Ringkasan</span>
+              <h3 class="font-bold text-sm text-zinc-900 dark:text-white mt-1">Dashboard Utama</h3>
+            </div>
+          </article>
+
+          <article class="card-h bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-sm">
+            <div class="h-44 overflow-hidden cursor-pointer" onclick="openImage('img/rsas/Form Antrian.jpeg')">
+              <img src="img/rsas/Form Antrian.jpeg" alt="Form Antrian" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-accent font-medium">03. Pendaftaran</span>
+              <h3 class="font-bold text-sm text-zinc-900 dark:text-white mt-1">Formulir Antrean</h3>
+            </div>
+          </article>
+
+          <article class="card-h bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-sm">
+            <div class="h-44 overflow-hidden cursor-pointer" onclick="openImage('img/rsas/Daftar Pasien.jpeg')">
+              <img src="img/rsas/Daftar Pasien.jpeg" alt="Daftar Pasien" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-accent font-medium">04. Manajemen Data</span>
+              <h3 class="font-bold text-sm text-zinc-900 dark:text-white mt-1">Daftar Pasien</h3>
+            </div>
+          </article>
+
+          <article class="card-h bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-sm">
+            <div class="h-44 overflow-hidden cursor-pointer" onclick="openImage('img/rsas/Monitor Antrian.jpeg')">
+              <img src="img/rsas/Monitor Antrian.jpeg" alt="Monitor Antrian" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-accent font-medium">05. Tampilan Publik</span>
+              <h3 class="font-bold text-sm text-zinc-900 dark:text-white mt-1">Layar Monitor Antrean</h3>
+            </div>
+          </article>
+
+          <article class="card-h bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-sm">
+            <div class="h-44 overflow-hidden cursor-pointer" onclick="openImage('img/rsas/Laporan Data Pasien.jpeg')">
+              <img src="img/rsas/Laporan Data Pasien.jpeg" alt="Laporan Data Pasien" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy">
+            </div>
+            <div class="p-4">
+              <span class="text-xs text-accent font-medium">06. Analitik</span>
+              <h3 class="font-bold text-sm text-zinc-900 dark:text-white mt-1">Laporan Data Pasien</h3>
+            </div>
+          </article>
+
+        </div>
+      </section>
 
       <!-- Next projects -->
       <div class="border-t border-zinc-100 dark:border-zinc-800 pt-10">
@@ -160,7 +226,7 @@
         <div class="grid md:grid-cols-2 gap-4">
           <a href="case-study.html" class="card-h group flex gap-4 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors bg-zinc-50 dark:bg-zinc-900">
             <div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-zinc-200 dark:bg-zinc-800">
-              <img src="img/8.png" alt="ICT NEXA" class="w-full h-full object-cover">
+              <img src="img/10.png" alt="Nexa" class="w-full h-full object-cover">
             </div>
             <div>
               <p class="text-xs text-accent font-medium mb-1">UI/UX Design</p>
