@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
+<html lang="id" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio - Dina Auliyah">
+  <meta name="description" content="Portofolio Dina Auliyah, UI/UX Designer dan Web Developer yang berfokus pada solusi digital intuitif.">
   <meta name="keywords"
     content="Dina Auliyah, Frontend Developer, Web Developer, UI/UX Enthusiast, Portfolio, HTML, CSS, JavaScript, Tailwind CSS, Alpine.js, GitHub">
   <meta name="author" content="Dina Auliyah">
   <link rel="icon" type="image/png" href="img/DA.png">
-  <meta property="og:title" content="Dina Auliyah — Portfolio">
-  <meta property="og:description" content="I design and build digital products that people love to use.">
+  <meta property="og:title" content="Dina Auliyah — Portofolio">
+  <meta property="og:description" content="Saya merancang dan mengembangkan produk digital yang intuitif dan mudah digunakan.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dinaauliyah27.github.io/portofolio/">
-  <title>Dina Auliyah - Portfolio</title>
+  <title>Dina Auliyah — Portofolio</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -198,7 +198,7 @@
   <!-- ═══ NAV ═══ -->
   <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
     :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
-    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Navigasi utama">
 
       <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
         <span class="text-zinc-900 dark:text-white">Dina</span><span class="text-accent"> Auliyah</span>
@@ -207,29 +207,29 @@
       <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
         <li><a href="#skills"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='skills'?'on !text-zinc-900 dark:!text-white':''">Skills</a></li>
+            :class="s==='skills'?'on !text-zinc-900 dark:!text-white':''">Keahlian</a></li>
         <li><a href="#academic"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='academic'?'on !text-zinc-900 dark:!text-white':''">Academic</a></li>
+            :class="s==='academic'?'on !text-zinc-900 dark:!text-white':''">Pendidikan</a></li>
         <li><a href="#experience"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='experience'?'on !text-zinc-900 dark:!text-white':''">Experience</a></li>
+            :class="s==='experience'?'on !text-zinc-900 dark:!text-white':''">Pengalaman</a></li>
         <li><a href="#projects"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='projects'?'on !text-zinc-900 dark:!text-white':''">Projects</a></li>
+            :class="s==='projects'?'on !text-zinc-900 dark:!text-white':''">Proyek</a></li>
         <li><a href="#about"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
+            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Tentang</a></li>
         <li><a href="#contact"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li>
+            :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Kontak</a></li>
       </ul>
 
       <div class="flex items-center gap-3">
         <!-- dark toggle -->
         <button @click="dark=!dark"
           class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
-          :aria-label="dark?'Light mode':'Dark mode'">
+          :aria-label="dark?'Mode terang':'Mode gelap'">
           <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
@@ -242,7 +242,7 @@
         <!-- contact me -->
         <a href="#contact"
           class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-          Contact me <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          Hubungi saya <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
@@ -268,19 +268,19 @@
       class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
         <li><a href="#skills" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Skills</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Keahlian</a></li>
         <li><a href="#projects" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projects</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Proyek</a></li>
         <li><a href="#about" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Tentang</a></li>
         <li><a href="#experience" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Experience</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Pengalaman</a></li>
 
         <li><a href="#contact" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Kontak</a></li>
         <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
           <a href="#contact" @click="mm=false"
-            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Contact me
+            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Hubungi saya
             →</a>
         </li>
       </ul>
@@ -301,28 +301,28 @@
         <div class="grid md:grid-cols-2 gap-12 items-center">
 
           <div>
-            <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">Available for work</p>
+            <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">Terbuka untuk peluang kerja</p>
             <h1
               class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
-              Hi, I'm <span class="text-accent">Dina Auliyah</span>
+              Halo, saya <span class="text-accent">Dina Auliyah</span>
             </h1>
             <p
               class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
-              An Informatics Engineering Graduate with a passion for <strong
-                class="font-medium text-zinc-700 dark:text-zinc-300">UI/UX Designer &amp; Web Development</strong>,
-              focused on creating intuitive and meaningful digital solutions.
+              Saya lulusan Teknik Informatika yang berfokus pada <strong
+                class="font-medium text-zinc-700 dark:text-zinc-300">UI/UX Design &amp; Web Development</strong>,
+              dengan minat membangun solusi digital yang intuitif dan bermakna.
             </p>
             <div class="reveal d3 flex flex-wrap gap-4">
               <a href="#projects"
                 class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
-                View my Projects
+                Lihat proyek saya
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
               <a href="#contact"
-                class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Get
-                in touch</a>
+                class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Mari
+                terhubung</a>
             </div>
             <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
               <div>
@@ -347,7 +347,7 @@
               </div>
               <a href="CV_DINAAULIYAH.pdf" download
                 class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg hover:opacity-90 transition">
-                View Resume </a>
+                Unduh CV </a>
             </div>
           </div>
         </div>
@@ -360,11 +360,11 @@
         <!-- Section Header -->
         <div class="text-center mb-20 reveal d1">
           <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">
-            My Skills
+            Keahlian Saya
           </p>
 
           <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-            Areas of Expertise
+            Bidang Keahlian
           </h2>
 
           <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
@@ -381,9 +381,7 @@
               </svg>
             </div>
             <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">UI/UX Design</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Creating intuitive and user-centered
-              interfaces, from wireframes to interactive prototypes. Focused on delivering clean and engaging user
-              experiences using Figma and Design Thinking.</p>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Merancang antarmuka yang intuitif dan berpusat pada pengguna, dari wireframe hingga prototype interaktif. Berfokus pada pengalaman pengguna yang jelas dan menarik dengan Figma serta Design Thinking.</p>
           </article>
 
           <article
@@ -396,9 +394,7 @@
               </svg>
             </div>
             <h3 class="font-display font-bold text-xl text-white mb-3">Web Development</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed">Building responsive and functional web applications using
-              HTML, CSS, JavaScript, PHP, and databases. Focused on creating efficient and user-friendly digital
-              solutions.</p>
+            <p class="text-sm text-zinc-400 leading-relaxed">Mengembangkan aplikasi web yang responsif dan fungsional dengan HTML, CSS, JavaScript, PHP, dan database. Berfokus pada solusi digital yang efisien serta mudah digunakan.</p>
           </article>
 
           <article

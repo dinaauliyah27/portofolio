@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" x-data="projects()" :class="{'dark':dark}" x-init="init()" class="scroll-smooth">
+<html lang="id" x-data="projects()" :class="{'dark':dark}" x-init="init()" class="scroll-smooth">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portofolio proyek UI/UX Design, Web Development, dan Data Analytics oleh Dina Auliyah."/>
+  <meta property="og:title" content="Proyek — Dina Auliyah"/>
+  <meta property="og:description" content="Kumpulan proyek UI/UX Design, Web Development, dan Data Analytics oleh Dina Auliyah."/>
   <title>Proyek — Dina Auliyah</title>
   <link rel="icon" type="image/png" href="img/DA.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -40,19 +43,19 @@
         <span class="text-zinc-900 dark:text-white">Dina</span><span class="text-accent"> Auliyah</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <li><a href="index.html#skills" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Skills</a></li>
-        <li><a href="index.html#academic" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Academic</a></li>
-        <li><a href="index.html#experience" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Experience</a></li>
-        <li><a href="projects.html" class="nav-link text-accent font-medium">Projects</a></li>
-        <li><a href="index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
-        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
+        <li><a href="index.html#skills" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Keahlian</a></li>
+        <li><a href="index.html#academic" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Pendidikan</a></li>
+        <li><a href="index.html#experience" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Pengalaman</a></li>
+        <li><a href="projects.html" class="nav-link text-accent font-medium">Proyek</a></li>
+        <li><a href="index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Tentang</a></li>
+        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Kontak</a></li>
       </ul>
       <div class="flex items-center gap-3">
         <button @click="dark=!dark;localStorage.setItem('theme',dark?'dark':'light')" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors" :aria-label="dark?'Light mode':'Dark mode'">
           <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
           <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
         </button>
-        <a href="index.html#contact" class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">Contact me &rarr;</a>
+        <a href="index.html#contact" class="hidden md:inline-flex items-center gap-2 btn-primary bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">Hubungi saya &rarr;</a>
         <button @click="mobileMenu=!mobileMenu" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" aria-label="Toggle menu">
           <svg x-show="!mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           <svg x-show="mobileMenu" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -76,8 +79,8 @@
       <div class="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
       <div class="max-w-6xl mx-auto px-6 relative z-10">
         <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portfolio</p>
-        <h1 class="reveal font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">All Projects</h1>
-        <p class="reveal text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mb-8">A collection of my work across UI/UX design, web development, and data analytics.</p>
+        <h1 class="reveal font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">Semua Proyek</h1>
+        <p class="reveal text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mb-8">Kumpulan proyek saya di bidang UI/UX Design, Web Development, dan Data Analytics.</p>
         <div class="reveal flex flex-wrap gap-2">
           <template x-for="f in filterOptions" :key="f.value">
             <button
@@ -127,7 +130,7 @@
                   </a>
                   <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4" x-text="p.desc"></p>
                   <div class="flex items-center justify-between">
-                    <a :href="p.url" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">View project →</a>
+                    <a :href="p.url" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">Lihat proyek →</a>
                     <span class="text-xs text-zinc-400" x-text="p.year"></span>
                   </div>
                 </div>
@@ -136,7 +139,7 @@
           </template>
         </div>
         <div x-show="visibleCount === 0" x-cloak class="text-center py-20">
-          <p class="text-zinc-400 text-sm">No projects in this category yet.</p>
+          <p class="text-zinc-400 text-sm">Belum ada proyek dalam kategori ini.</p>
         </div>
       </div>
     </section>
@@ -147,7 +150,7 @@
           <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"></div>
           <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"></div>
           <div class="relative z-10">
-            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Ready to start?</p>
+            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Siap memulai?</p>
             <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">Punya Proyek untuk Dikerjakan?</h2>
             <p class="text-zinc-400 max-w-md mx-auto mb-8">Saya terbuka untuk proyek baru maupun kolaborasi. Ceritakan ide Anda dan kita cari tahu apakah kita cocok bekerja sama.</p>
             <a href="index.html#contact" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">Mulai Diskusi &rarr;</a>
