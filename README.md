@@ -1,25 +1,29 @@
-# Folio— Freelance Portfolio Template (HTML · Tailwind · Alpine.js)
-#### Preview
+# Portofolio Dina Auliyah
 
- - [Demo](https://themewagon.github.io/folio-html/)
+Portofolio pribadi Dina Auliyah yang menampilkan proyek UI/UX Design, Web Development, dan Data Analytics.
 
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/folio-html/)
+## Halaman
 
-## Getting Started
+- `index.html` — Beranda, keahlian, pendidikan, pengalaman, proyek, dan kontak.
+- `projects.html` — Daftar proyek.
+- `case-study.html` — Studi kasus UI/UX ICT-NEXA.
+- `case-study-hospital.html` — Studi kasus Sistem Antrean RS Online.
+- `case-study-excel.html` — Studi kasus Dashboard Analisis Data Excel.
 
-1. Clone Repository
-```
-git clone https://github.com/themewagon/folio-html.git
-```
+## Teknologi
 
-## Author 
-```
-Design and code is completely written by Laurent Begey and development team. 
-```
+- HTML
+- Tailwind CSS
+- Alpine.js
 
-## License
+## Menjalankan Secara Lokal
 
- - Design and Code is Copyright &copy; <a href="https://lbegey78.gumroad.com/" target="_blank">Laurent Begey</a>
- - Licensed cover under [MIT]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+Buka `index.html` melalui web server lokal, misalnya Apache pada XAMPP, lalu akses proyek dari browser.
+
+## Pemeliharaan
+
+Konten, gambar, dan tautan proyek dapat diperbarui langsung pada file HTML terkait. Asset gambar disimpan dalam folder `img/`.
+
+## Pemilik
+
+Dikelola oleh [Dina Auliyah](https://github.com/dinaauliyah27).
