@@ -2,3 +2,6 @@
 .env
 .env.local
 .env.*
+
+# Local codebase index artifacts
+.codebase-memory/
