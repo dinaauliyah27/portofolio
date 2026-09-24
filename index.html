@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
+<html lang="id" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio - Dina Auliyah">
+  <meta name="description" content="Portofolio - Dina Auliyah">
   <meta name="keywords"
-    content="Dina Auliyah, Frontend Developer, Web Developer, UI/UX Enthusiast, Portfolio, HTML, CSS, JavaScript, Tailwind CSS, Alpine.js, GitHub">
+    content="Dina Auliyah, Frontend Developer, Web Developer, UI/UX Enthusiast, Portofolio, HTML, CSS, JavaScript, Tailwind CSS, Alpine.js, GitHub">
   <meta name="author" content="Dina Auliyah">
   <link rel="icon" type="image/png" href="img/DA.png">
   <meta property="og:title" content="Dina Auliyah — Portfolio">
-  <meta property="og:description" content="I design and build digital products that people love to use.">
+  <meta property="og:description" content="Saya merancang dan membangun produk digital yang nyaman digunakan.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dinaauliyah27.github.io/portofolio/">
-  <title>Dina Auliyah - Portfolio</title>
+  <title>Dina Auliyah - Portofolio</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -207,22 +207,22 @@
       <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
         <li><a href="#skills"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='skills'?'on !text-zinc-900 dark:!text-white':''">Skills</a></li>
+            :class="s==='skills'?'on !text-zinc-900 dark:!text-white':''">Keahlian</a></li>
         <li><a href="#academic"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='academic'?'on !text-zinc-900 dark:!text-white':''">Academic</a></li>
+            :class="s==='academic'?'on !text-zinc-900 dark:!text-white':''">Pendidikan</a></li>
         <li><a href="#experience"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='experience'?'on !text-zinc-900 dark:!text-white':''">Experience</a></li>
+            :class="s==='experience'?'on !text-zinc-900 dark:!text-white':''">Pengalaman</a></li>
         <li><a href="#projects"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='projects'?'on !text-zinc-900 dark:!text-white':''">Projects</a></li>
+            :class="s==='projects'?'on !text-zinc-900 dark:!text-white':''">Proyek</a></li>
         <li><a href="#about"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
+            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Tentang</a></li>
         <li><a href="#contact"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li>
+            :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Kontak</a></li>
       </ul>
 
       <div class="flex items-center gap-3">
@@ -242,7 +242,7 @@
         <!-- contact me -->
         <a href="#contact"
           class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-          Contact me <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          Hubungi Saya <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
@@ -268,19 +268,19 @@
       class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
         <li><a href="#skills" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Skills</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Keahlian</a></li>
         <li><a href="#projects" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projects</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Proyek</a></li>
         <li><a href="#about" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Tentang</a></li>
         <li><a href="#experience" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Experience</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Pengalaman</a></li>
 
         <li><a href="#contact" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Kontak</a></li>
         <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
           <a href="#contact" @click="mm=false"
-            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Contact me
+            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Hubungi Saya
             →</a>
         </li>
       </ul>
@@ -301,28 +301,28 @@
         <div class="grid md:grid-cols-2 gap-12 items-center">
 
           <div>
-            <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">Available for work</p>
+            <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">Terbuka untuk pekerjaan</p>
             <h1
               class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
-              Hi, I'm <span class="text-accent">Dina Auliyah</span>
+              Halo, saya <span class="text-accent">Dina Auliyah</span>
             </h1>
             <p
               class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
-              An Informatics Engineering Graduate with a passion for <strong
-                class="font-medium text-zinc-700 dark:text-zinc-300">UI/UX Designer &amp; Web Development</strong>,
-              focused on creating intuitive and meaningful digital solutions.
+              Lulusan Teknik Informatika dengan semangat pada bidang <strong
+                class="font-medium text-zinc-700 dark:text-zinc-300">UI/UX Designer & Web Development</strong>,
+              yang berfokus pada penciptaan solusi digital yang intuitif dan bermakna.
             </p>
             <div class="reveal d3 flex flex-wrap gap-4">
               <a href="#projects"
                 class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
-                View my Projects
+                Lihat Proyek Saya
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
               <a href="#contact"
-                class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Get
-                in touch</a>
+                class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Hubungi
+                Saya</a>
             </div>
             <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
               <div>
@@ -347,7 +347,7 @@
               </div>
               <a href="CV_DINAAULIYAH.pdf" download
                 class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg hover:opacity-90 transition">
-                View Resume </a>
+                Lihat CV </a>
             </div>
           </div>
         </div>
@@ -360,11 +360,11 @@
         <!-- Section Header -->
         <div class="text-center mb-20 reveal d1">
           <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">
-            My Skills
+            Keahlian Saya
           </p>
 
           <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-            Areas of Expertise
+            Bidang Keahlian
           </h2>
 
           <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
@@ -381,9 +381,9 @@
               </svg>
             </div>
             <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">UI/UX Design</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Creating intuitive and user-centered
-              interfaces, from wireframes to interactive prototypes. Focused on delivering clean and engaging user
-              experiences using Figma and Design Thinking.</p>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Menciptakan antarmuka yang intuitif dan
+              berpusat pada pengguna, dari wireframe hingga prototipe interaktif. Berfokus pada penyajian pengalaman
+              pengguna yang bersih dan menarik dengan menggunakan Figma dan Design Thinking.</p>
           </article>
 
           <article
@@ -396,9 +396,9 @@
               </svg>
             </div>
             <h3 class="font-display font-bold text-xl text-white mb-3">Web Development</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed">Building responsive and functional web applications using
-              HTML, CSS, JavaScript, PHP, and databases. Focused on creating efficient and user-friendly digital
-              solutions.</p>
+            <p class="text-sm text-zinc-400 leading-relaxed">Membangun aplikasi web yang responsif dan fungsional
+              menggunakan HTML, CSS, JavaScript, PHP, dan database. Berfokus pada penciptaan solusi digital yang efisien
+              dan ramah pengguna.</p>
           </article>
 
           <article
@@ -411,9 +411,10 @@
               </svg>
             </div>
             <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Data Analytics</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Analyzing and visualizing data using
-              Microsoft Excel, Pivot Tables, Python, and RapidMiner. Experienced in data preprocessing, exploratory data
-              analysis, and creating meaningful insights to support better decision-making.</p>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Menganalisis dan memvisualisasikan data
+              menggunakan Microsoft Excel, Pivot Table, Python, dan RapidMiner. Berpengalaman dalam preprocessing data,
+              analisis data eksploratif, serta menghasilkan insight yang bermakna untuk mendukung pengambilan keputusan
+              yang lebih baik.</p>
           </article>
 
           <article
@@ -426,9 +427,9 @@
               </svg>
             </div>
             <h3 class="font-display font-bold text-xl text-white mb-3">Graphic Design</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed">Creating visual content such as logos, posters,
-              invitations, presentations, social media content, and promotional materials. Experienced with CorelDRAW,
-              Adobe Photoshop, Canva, and CapCut to produce creative and visually appealing designs.</p>
+            <p class="text-sm text-zinc-400 leading-relaxed">Membuat konten visual seperti logo, poster, undangan,
+              presentasi, konten media sosial, dan materi promosi. Berpengalaman dengan CorelDRAW, Adobe Photoshop,
+              Canva, dan CapCut untuk menghasilkan desain yang kreatif dan menarik secara visual.</p>
           </article>
 
         </div>
@@ -441,8 +442,8 @@
 
         <!-- Section Header -->
         <div class="text-center mb-20 reveal d1">
-          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Education</p>
-          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">Academic Background</h2>
+          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Pendidikan</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">Latar Belakang Pendidikan</h2>
           <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
         </div>
 
@@ -471,11 +472,11 @@
               </h3>
 
               <p class="mt-2 text-xl text-zinc-500 dark:text-zinc-400">
-                Bachelor's Degree in Informatics Engineering
+                Sarjana Teknik Informatika
               </p>
 
               <p class="mt-3 text-lg text-zinc-400">
-                GPA: 3.85/4.00 (Cum Laude)
+                IPK: 3.85/4.00 (Cum Laude)
               </p>
 
             </div>
@@ -497,11 +498,11 @@
               </h3>
 
               <p class="mt-2 text-xl text-zinc-500 dark:text-zinc-400">
-                Associate Degree in Information Management
+                Ahli Madya Manajemen Informatika
               </p>
 
               <p class="mt-3 text-lg text-zinc-400">
-                GPA: 3.89/4.00
+                IPK: 3.89/4.00
               </p>
 
             </div>
@@ -522,8 +523,8 @@
       <div class="max-w-6xl mx-auto px-6">
         <!-- Section Header -->
         <div class="text-center mb-20 reveal d1">
-          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Experience</p>
-          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">My Journey</h2>
+          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Pengalaman</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">Perjalanan Saya</h2>
           <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
         </div>
         <div class="space-y-10">
@@ -544,9 +545,9 @@
                 <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Marketing Credit Executive</h3>
                 <p class="text-lg text-accent mt-1">FIFGROUP (Danastra) – Maros</p>
                 <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                  Responsible for identifying and developing prospective credit clients, reviewing and ensuring the
-                  completeness of credit application requirements, and meeting corporate sales and financing
-                  disbursement targets.
+                  Bertanggung jawab mengidentifikasi dan mengembangkan calon debitur kredit, meninjau serta memastikan
+                  kelengkapan persyaratan pengajuan kredit, dan memenuhi target penjualan serta pencairan pembiayaan
+                  perusahaan.
                 </p>
               </div>
             </div>
@@ -570,9 +571,9 @@
                 <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Admin</h3>
                 <p class="text-lg text-accent mt-1">Zazil Bakery – Maros</p>
                 <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                  Managed incoming goods verification against shipping documentation, conducted accurate stock data
-                  entry for inbound and outbound items, assisted in warehouse administration and stock audits, and
-                  delivered friendly customer service while maintaining clean and organized operational areas.
+                  Melakukan verifikasi barang masuk terhadap dokumen pengiriman, mencatat data stok barang masuk dan
+                  keluar secara akurat, membantu administrasi gudang dan audit stok, serta memberikan pelayanan
+                  pelanggan yang ramah sambil menjaga area operasional tetap bersih dan tertata.
                 </p>
               </div>
             </div>
@@ -588,12 +589,12 @@
               <!-- Content -->
               <div class="md:col-span-2">
                 <span class="text-sm text-zinc-500 dark:text-zinc-400">August 2022 – February 2023</span>
-                <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Operational Assistant Intern</h3>
+                <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Magang Asisten Operasional</h3>
                 <p class="text-lg text-accent mt-1">PT. Bank Sulselbar Maros</p>
                 <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                  Supported daily operational and administrative activities, including document management, transaction
-                  recording, inventory organization, and mortgage loan (KPR) file registration while gaining practical
-                  experience in banking operations and professional workplace communication.</p>
+                  Mendukung aktivitas operasional dan administrasi harian, termasuk pengelolaan dokumen, pencatatan
+                  transaksi, penataan inventaris, dan pendaftaran berkas kredit pemilikan rumah (KPR), sekaligus
+                  memperoleh pengalaman praktis dalam operasional perbankan dan komunikasi profesional di tempat kerja.</p>
               </div>
             </div>
           </div>
@@ -608,11 +609,11 @@
               <!-- Content -->
               <div class="md:col-span-2">
                 <span class="text-sm text-zinc-500 dark:text-zinc-400">August 2021 – August 2022</span>
-                <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Graphic Design Instructor</h3>
+                <h3 class="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">Instruktur Desain Grafis</h3>
                 <p class="text-lg text-accent mt-1">Technology and Information Computer (TIC)</p>
-                <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">Taught members the fundamentals of
-                  graphic design using CorelDRAW and provided practical training in creating logos, posters,
-                  invitations, and other visual materials, while fostering creativity and design skills.</p>
+                <p class="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">Mengajarkan dasar-dasar desain grafis
+                  kepada anggota menggunakan CorelDRAW dan memberikan pelatihan praktik dalam membuat logo, poster,
+                  undangan, dan materi visual lainnya, sekaligus menumbuhkan kreativitas dan keterampilan desain.</p>
               </div>
             </div>
           </div>
@@ -625,12 +626,12 @@
       <div class="max-w-6xl mx-auto px-6">
         <!-- Section Header -->
         <div class="text-center mb-20 reveal d1">
-          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Portfolio</p>
-          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">Project Showcase</h2>
+          <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Portofolio</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">Galeri Proyek</h2>
           <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
           <a href="projects.html"
-            class="reveal d1 inline-block mt-8 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors nl">All
-            Projects →</a>
+            class="reveal d1 inline-block mt-8 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors nl">Semua
+            Proyek →</a>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
@@ -651,16 +652,16 @@
                   Thinking</span>
               </div>
               <a href="case-study.html">
-                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">ICT-Nexa Application -
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Aplikasi ICT-Nexa -
                   UI/UX Design </h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Focused on designing the user
-                interface and user experience of the ICT-NEXA application. Utilizing Figma and the Design Thinking
-                approach, this project produced a more intuitive, responsive, and user-centered design that aligns with
-                users' needs.</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Berfokus pada perancangan
+                antarmuka dan pengalaman pengguna aplikasi ICT-NEXA. Dengan memanfaatkan Figma dan pendekatan Design
+                Thinking, proyek ini menghasilkan desain yang lebih intuitif, responsif, dan berpusat pada pengguna sesuai
+                kebutuhan mereka.</p>
               <a href="case-study.html"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
-                study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Lihat studi
+                kasus <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg></a>
             </div>
@@ -679,19 +680,20 @@
                   class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Web
                   Development</span>
                 <span
-                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Online
-                  Queue</span>
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Antrean
+                  Online</span>
               </div>
               <a href="case-study.html">
-                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Online Hospital Queue
-                  Management System (Web-Based)</h3>
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Sistem Manajemen Antrean
+                  Rumah Sakit Online (Berbasis Web)</h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Developed a web-based hospital
-                queue management system that allows patients to obtain queue numbers online, track queue status in real
-                time, and access estimated service times, improving service efficiency and organization.</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Mengembangkan sistem manajemen
+                antrean rumah sakit berbasis web yang memungkinkan pasien mengambil nomor antrean secara online, memantau
+                status antrean secara real time, dan mengakses estimasi waktu layanan, sehingga meningkatkan efisiensi
+                dan keteraturan layanan.</p>
               <a href="case-study.html"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
-                study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Lihat studi
+                kasus <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg></a>
             </div>
@@ -715,16 +717,16 @@
                   Table</span>
               </div>
               <a href="case-study.html">
-                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Interactive Excel Data
-                  Dashboard</h3>
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Dashboard Data Excel
+                  Interaktif</h3>
               </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Designed and implemented an
-                interactive reporting dashboard in Microsoft Excel utilizing Pivot Tables, dynamic formulas, and custom
-                data visualizations to analyze operational performance metrics and support data-driven business
-                decisions.</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Merancang dan mengimplementasikan
+                dashboard pelaporan interaktif di Microsoft Excel menggunakan Pivot Table, rumus dinamis, dan visualisasi
+                data kustom untuk menganalisis metrik performa operasional serta mendukung pengambilan keputusan berbasis
+                data.</p>
               <a href="case-study.html"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
-                study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Lihat studi
+                kasus <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg></a>
             </div>
@@ -746,23 +748,24 @@
           </div>
 
           <div class="order-1 md:order-2">
-            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">About me</p>
+            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Tentang Saya</p>
             <h2
               class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">
-              A bit about<br>who I am</h2>
+              Sedikit tentang<br>siapa saya</h2>
             <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-              I am a Cum Laude Informatics Engineering graduate (GPA 3.85/4.00) with experience in developing
-              academic-scale web applications and managing databases using MySQL. I am familiar with the entire software
-              development process, including system design, UI/UX design, application implementation, and testing
+              Saya lulusan Teknik Informatika dengan predikat Cum Laude (IPK 3.85/4.00) yang berpengalaman dalam
+              mengembangkan aplikasi web skala akademik dan mengelola database menggunakan MySQL. Saya memahami
+              keseluruhan proses pengembangan perangkat lunak, mulai dari perancangan sistem, desain UI/UX, implementasi
+              aplikasi, hingga pengujian.
             </p>
             <p class="reveal d3 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
-              I possess strong analytical skills, discipline, and a high sense of responsibility. I am capable of
-              working both independently and collaboratively in a team environment, and I am always eager to learn new
-              technologies and continuously improve my skills.
+              Saya memiliki kemampuan analitis yang kuat, disiplin, dan rasa tanggung jawab yang tinggi. Saya mampu
+              bekerja secara mandiri maupun berkolaborasi dalam tim, serta selalu bersemangat mempelajari teknologi baru
+              dan terus meningkatkan keterampilan saya.
             </p>
             <div class="reveal d4">
-              <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Stack &amp;
-                tools</p>
+              <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Teknologi &
+                Tools</p>
               <div class="flex flex-wrap gap-2" role="list" aria-label="Skills">
                 <span role="listitem"
                   class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">UI/UX</span>
@@ -807,18 +810,18 @@
         <!-- Section Header -->
         <div class="text-center mb-16 reveal">
           <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">
-            Achievements
+            Pencapaian
           </p>
 
           <h2 class="font-display text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-            Certificates
+            Sertifikat
           </h2>
 
           <div class="w-20 h-1 bg-accent rounded-full mx-auto mt-5"></div>
 
           <p class="mt-6 text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto">
-            Professional certifications, training programs, and achievements that reflect my continuous learning and
-            skill development.
+            Sertifikasi profesional, program pelatihan, dan pencapaian yang mencerminkan pembelajaran berkelanjutan serta
+            pengembangan keterampilan saya.
           </p>
         </div>
 
@@ -928,10 +931,10 @@
           <div class="relative z-10">
 
             <div class="text-center mb-14 reveal">
-              <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Get In Touch</p>
-              <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-5">Let's Work Together</h2>
-              <p class="max-w-2xl mx-auto text-zinc-400 leading-relaxed">Feel free to reach out for collaborations,
-                opportunities, or simply to say hello. I'm always open to learning and new experiences.</p>
+              <p class="text-xs font-medium text-accent uppercase tracking-widest mb-3">Hubungi Saya</p>
+              <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-5">Mari Bekerja Sama</h2>
+              <p class="max-w-2xl mx-auto text-zinc-400 leading-relaxed">Jangan ragu untuk menghubungi saya untuk
+                kolaborasi, peluang, atau sekadar menyapa. Saya selalu terbuka untuk belajar dan pengalaman baru.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1290,7 +1293,8 @@
           document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
           // year
-          document.getElementById('yr').textContent = new Date().getFullYear();
+          const yr = document.getElementById('yr');
+          if (yr) yr.textContent = new Date().getFullYear();
         },
 
         updateSection() {
