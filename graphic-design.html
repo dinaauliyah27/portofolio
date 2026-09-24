@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id" x-data="{ dark: localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches), scrolled:false, mobileMenu:false }" :class="{'dark':dark}" x-init="$watch('dark',v=>localStorage.setItem('theme',v?'dark':'light'));window.addEventListener('scroll',()=>scrolled=window.scrollY>20,{passive:true})" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Koleksi karya Graphic Design oleh Dina Auliyah, mencakup materi promosi dan desain visual."/>
+  <meta name="author" content="Dina Auliyah"/>
+  <meta property="og:title" content="Koleksi Graphic Design — Dina Auliyah"/>
+  <meta property="og:description" content="Koleksi karya Graphic Design oleh Dina Auliyah."/>
+  <meta property="og:type" content="website"/>
+  <title>Koleksi Graphic Design — Dina Auliyah</title>
+  <link rel="icon" type="image/webp" href="img/DA.webp"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet"/>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{display:['PT Sans','sans-serif'],body:['DM Sans','sans-serif']},colors:{accent:'#3B82F6','accent-light':'#60A5FA'}}}}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}html{font-family:'DM Sans',sans-serif}h1,h2,h3{font-family:'PT Sans',sans-serif}body{transition:background-color .3s,color .3s}.nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:currentColor;transition:width .25s ease}.nav-link:hover::after{width:100%}.card-h{transition:transform .28s ease,border-color .2s}.card-h:hover{transform:translateY(-4px)}[x-cloak]{display:none!important}.gallery-image{width:100%;height:100%;object-fit:cover;display:block}.modal-open{overflow:hidden}
+  </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" :class="scrolled?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':'bg-transparent'">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Navigasi utama">
+      <a href="index.html" class="font-display font-bold text-xl tracking-tight"><span>Dina</span><span class="text-accent"> Auliyah</span></a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
+        <li><a href="index.html#skills" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white">Keahlian</a></li>
+        <li><a href="projects.html" class="nav-link text-accent">Proyek</a></li>
+        <li><a href="index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white">Tentang</a></li>
+        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white">Kontak</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <button type="button" @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800" :aria-label="dark?'Mode terang':'Mode gelap'">
+          <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg x-show="dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+        </button>
+        <button type="button" @click="mobileMenu=!mobileMenu" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" :aria-expanded="mobileMenu" aria-label="Buka atau tutup menu">
+          <svg x-show="!mobileMenu" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="mobileMenu" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div x-show="mobileMenu" x-cloak class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium" role="list">
+        <li><a href="index.html#skills" @click="mobileMenu=false" class="block">Keahlian</a></li>
+        <li><a href="projects.html" @click="mobileMenu=false" class="block text-accent">Proyek</a></li>
+        <li><a href="index.html#about" @click="mobileMenu=false" class="block">Tentang</a></li>
+        <li><a href="index.html#contact" @click="mobileMenu=false" class="block">Kontak</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="pt-32 pb-24">
+    <section class="max-w-6xl mx-auto px-6 mb-16">
+      <a href="projects.html" class="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors mb-8">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+        Kembali ke proyek
+      </a>
+      <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Graphic Design</p>
+      <h1 class="font-display font-bold text-4xl md:text-6xl leading-tight max-w-3xl mb-5">Koleksi Desain Grafis</h1>
+      <p class="text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl leading-relaxed">Kumpulan materi visual untuk kebutuhan promosi dan komunikasi. Halaman ini dirancang sebagai galeri yang dapat terus ditambahkan seiring bertambahnya karya.</p>
+      <div class="flex flex-wrap gap-2 mt-8">
+        <span class="text-sm px-3 py-1.5 rounded-full bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700">CorelDRAW</span>
+        <span class="text-sm px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">Materi Promosi</span>
+        <span class="text-sm px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">Desain Kupon</span>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="card-h rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+          <button type="button" class="block w-full text-left" @click="$refs.modalImage.src='img/kupon-1.webp';$refs.modalImage.alt='Desain kupon promosi 1';$refs.modal.classList.remove('hidden');$refs.modal.classList.add('flex');document.body.classList.add('modal-open')" aria-label="Perbesar desain kupon promosi 1">
+            <div class="aspect-[2000/647] bg-zinc-200 dark:bg-zinc-800"><img src="img/kupon-1.webp" alt="Desain kupon promosi 1" class="gallery-image" loading="eager"/></div>
+          </button>
+          <div class="p-6"><p class="text-xs text-accent font-medium mb-2">Desain Kupon</p><h2 class="font-display font-bold text-xl">Kupon Promosi — Variasi 01</h2></div>
+        </article>
+        <article class="card-h rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+          <button type="button" class="block w-full text-left" @click="$refs.modalImage.src='img/kupon-2.webp';$refs.modalImage.alt='Desain kupon promosi 2';$refs.modal.classList.remove('hidden');$refs.modal.classList.add('flex');document.body.classList.add('modal-open')" aria-label="Perbesar desain kupon promosi 2">
+            <div class="aspect-[2000/647] bg-zinc-200 dark:bg-zinc-800"><img src="img/kupon-2.webp" alt="Desain kupon promosi 2" class="gallery-image" loading="lazy"/></div>
+          </button>
+          <div class="p-6"><p class="text-xs text-accent font-medium mb-2">Desain Kupon</p><h2 class="font-display font-bold text-xl">Kupon Promosi — Variasi 02</h2></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div x-ref="modal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/85 p-6" @click.self="$refs.modal.classList.add('hidden');$refs.modal.classList.remove('flex');document.body.classList.remove('modal-open')" @keydown.escape.window="$refs.modal.classList.add('hidden');$refs.modal.classList.remove('flex');document.body.classList.remove('modal-open')" role="dialog" aria-modal="true" aria-label="Pratinjau desain">
+    <button type="button" @click="$refs.modal.classList.add('hidden');$refs.modal.classList.remove('flex');document.body.classList.remove('modal-open')" class="absolute top-5 right-6 text-white text-4xl hover:text-accent" aria-label="Tutup pratinjau">&times;</button>
+    <img x-ref="modalImage" class="max-w-[94vw] max-h-[88vh] rounded-2xl shadow-2xl object-contain" alt=""/>
+  </div>
+
+  <footer class="border-t border-zinc-100 dark:border-zinc-900"><div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="text-sm text-zinc-400">&copy; <span id="year"></span> Dina Auliyah.</p><p class="text-xs text-zinc-500">HTML · Tailwind CSS · Alpine.js</p></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
