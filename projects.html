@@ -77,7 +77,7 @@
       <div class="max-w-6xl mx-auto px-6 relative z-10">
         <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portofolio</p>
         <h1 class="reveal font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">Semua Proyek</h1>
-        <p class="reveal text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mb-8">Kumpulan karya saya di bidang desain UI/UX, pengembangan web, dan analisis data.</p>
+        <p class="reveal text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mb-8">Kumpulan karya saya di bidang desain UI/UX, pengembangan web, analisis data, dan desain grafis.</p>
         <div class="reveal flex flex-wrap gap-2">
           <template x-for="f in filterOptions" :key="f.value">
             <button
@@ -173,10 +173,11 @@
         filter: 'all',
 
         filterOptions: [
-          { value: 'all',      label: 'Semua (3)' },
+          { value: 'all',      label: 'Semua (4)' },
           { value: 'uiux',    label: 'UI/UX Design' },
           { value: 'web',     label: 'Web Development' },
           { value: 'data',    label: 'Data Analytics' },
+          { value: 'design',  label: 'Graphic Design' },
         ],
 
         allProjects: [
@@ -212,6 +213,17 @@
             desc: 'Dashboard interaktif dengan Pivot Tables dan Slicer dinamis untuk memvisualisasikan performa operasional bisnis secara ringkas dan mudah dipahami.',
             img: 'img/13.png',
             url: 'case-study-excel.html'
+          },
+          {
+            id: 4,
+            title: 'Koleksi Desain Grafis — Kupon & Poster',
+            category: 'design',
+            categoryLabel: 'Graphic Design',
+            tags: ['CorelDRAW', 'Graphic Design', 'Materi Promosi'],
+            year: '2024',
+            desc: 'Kumpulan materi visual untuk kebutuhan promosi dan komunikasi — kupon qurban dan poster jurnal ilmiah.',
+            img: 'img/desain/kupon%20qurban%201.jpg',
+            url: 'graphic-design.html'
           },
         ],
 
